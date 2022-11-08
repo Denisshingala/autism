@@ -1,5 +1,5 @@
 import React from 'react'
-import logoPath from '../../images/Autism-Logo.png';
+import logoPath from '../../images/logo.png';
 
 const Navbar = () => {
     return (
