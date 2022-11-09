@@ -1,9 +1,10 @@
 import './App.css';
+import Games from './pages/Games/Games';
 
 function App() {
   return (
     <div className="App">
-      Autism Team
+      <Games/>
     </div>
   );
 }
