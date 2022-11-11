@@ -1,8 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import logoPath from '../../images/logo.png';
-import { Search as SearchIcon, Menu as MenuIcon } from '@mui/icons-material';
-import { Box, SwipeableDrawer, Button, List, Divider, ListItem, ListItemButton, ListItemText } from '@mui/material';
+import { Search as SearchIcon, Menu as MenuIcon, AccountCircle } from '@mui/icons-material';
+import { Box, SwipeableDrawer, Button, List, Divider, ListItem, ListItemButton, ListItemText, IconButton } from '@mui/material';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -63,6 +63,9 @@ const Navbar = () => {
                     <NavLink to="#" className="navbar-link main-navbar-link">Contact Us</NavLink>
                     <NavLink to="#" className="navbar-link main-navbar-link">Pricing</NavLink>
                     <NavLink to="#" className="navbar-link main-navbar-link">Setting</NavLink>
+                    <IconButton className='float-end ms-3 profile-btn'>
+                        <AccountCircle fontSize="large" />
+                    </IconButton>
                     <form className='navbar-form float-end main-navbar-link'>
                         <input type="search" name="search" className="search-input" placeholder='Search...' />
                         <button type="submit" name='submit' className='search-btn'><SearchIcon /></button>

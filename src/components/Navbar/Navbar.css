@@ -10,8 +10,8 @@
     margin: 5px 20px;
 }
 
-.navbar-link:hover {
-    color: var(--pink);
+.navbar-link:hover, .navbar-link span:hover {
+    color: var(--light-pink);
 }
 
 .navbar-form {
@@ -41,7 +41,7 @@
     display: none;
 }
 
-@media only screen and (max-width: 1010px) {
+@media only screen and (max-width: 1060px) {
     .nav-bar {
         padding: 10px;
     }
@@ -60,5 +60,9 @@
 
     .search-input {
         width: 160px;
+    }
+
+    .profile-btn{
+        margin-left: -5px !important;
     }
 }
