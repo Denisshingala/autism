@@ -1,0 +1,102 @@
+.games-hero-img img{
+    width: 100%;
+    /* border: 1px solid red; */
+    margin: 0;
+}
+.games-left-section{
+    /* background: #ffffff; */
+    position: relative;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-top: 10px;
+    height:fit-content;
+}
+.games-right-section{
+    background: #ffffff;
+    justify-content: center;
+}
+.title{
+    color: #252422;
+    align-items: left;
+    line-height: 20px;
+    font-weight: 600;
+}
+.search-box{
+    /* width: 419px; used in figma */
+    margin: 10px 0;
+    height: 50px;
+    display: flex;
+}
+.search-icon{
+    height: 50px !important;
+    width: 40px!important;
+    background-color: #E2EDFB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none !important;
+    color: #C0C0C0;
+    border-radius: 5px 0px 0px 5px;
+}
+.search-input{
+    margin: 0 !important;
+    background-color: #E2EDFB;
+    border: none;
+    outline: none;
+    height: 50px !important;
+}
+.search-submit-btn{
+    background-color: #E2EDFB;
+    border: none;
+    outline: none;
+    height: 50px !important;
+    width: 75px;
+    color: #C0C0C0;
+    border-radius: 0 5px 5px 0;
+}
+.game-ls-active{
+    color: #252422;
+    font-weight: 500;
+    margin: 15px 0;
+    list-style: none;
+    transition: 0.2s all linear;
+    /* border: 0;
+    border-left: #FE93A0;
+    border-style: solid; */
+    border-left:3px solid #FE93A0;
+    padding-left: 10px;
+}
+.game-ls{
+    color: #777B7D;
+    font-weight: 400;
+    margin: 15px 0;
+    list-style: none;
+    padding-left: 13px;
+}
+
+.game-card{
+    width: 415px !important;
+    height: 370px !important;
+    margin: 40px 20px;
+    padding: 0 !important;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    justify-content: center;
+}
+.game-card-img img{
+    width: 400px !important;
+    height: 290px;
+    background-position: center;
+    background-attachment: scroll;
+    /* border: 2px solid red; */
+    
+}
+.game-card-title h4{
+    /* background: #FFE2E5; */
+    padding: 0 !important;
+    width: 70% !important;
+    padding-left: 10px !important;
+    text-align: left;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
