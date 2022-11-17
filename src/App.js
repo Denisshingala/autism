@@ -19,7 +19,7 @@ function App() {
         <Route exact path="/dummy" element={<Dummy />} />
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 
 export default App;
