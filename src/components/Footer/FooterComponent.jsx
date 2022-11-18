@@ -13,9 +13,9 @@ const FooterComponent = () => {
                 <div className="footer-col">
                     <h4>Social</h4>
                     <ul>
-                        <li><i class="bi bi-instagram mx-1"></i> Instagram</li>
-                        <li><i class="bi bi-twitter mx-1"></i> Twitter</li>
-                        <li><i class="bi bi-facebook mx-1"></i> Facebook</li>
+                        <li><i className="bi bi-instagram mx-1"></i> Instagram</li>
+                        <li><i className="bi bi-twitter mx-1"></i> Twitter</li>
+                        <li><i className="bi bi-facebook mx-1"></i> Facebook</li>
                     </ul>
                 </div>
                 <div className="footer-col">

@@ -1,0 +1,65 @@
+#container {
+    height: 100vh;
+    display: flex;
+}
+
+#login-signup-container {
+    height: 100%;
+    width: 40%;
+    overflow: scroll;
+}
+
+#login-signup-container::-webkit-scrollbar {
+    display: none;
+}
+
+.backText {
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+#login-signup-form-div {
+    display: flex;
+    justify-content: center;
+}
+
+#login-signup-form {
+    margin-top: 50px;
+    width: 70%;
+}
+
+.login-signup-button {
+    background-color: #7baaea !important;
+    width: 100%;
+    padding: 12px !important;
+    margin: 15px auto !important;
+}
+
+#logo-div {
+    margin: 30px 0 50px 0;
+}
+
+#background-branding-container {
+    height: 99.5%;
+    width: 60%;
+}
+
+#background-branding-container img {
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 992px) {
+    #login-signup-container {
+        width: 100%;
+    }
+
+    #background-branding-container {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 592px) and (max-width: 992px) {
+    #login-signup-form {
+        width: 50%;
+    }
+}

@@ -28,7 +28,7 @@ const Navbar = () => {
             <List>
                 <ListItem>
                     <form className='navbar-form'>
-                        <input type="search" name="search" className="search-input" placeholder='Search...' />
+                        <input type="search" name="search" className="navbar-search-input" placeholder='Search...' />
                         <button type="submit" name='submit' className='search-btn'><SearchIcon /></button>
                     </form>
                 </ListItem>
@@ -67,7 +67,7 @@ const Navbar = () => {
                         <AccountCircle fontSize="large" />
                     </IconButton>
                     <form className='navbar-form float-end main-navbar-link'>
-                        <input type="search" name="search" className="search-input" placeholder='Search...' />
+                        <input type="search" name="search" className="navbar-search-input" placeholder='Search...' />
                         <button type="submit" name='submit' className='search-btn'><SearchIcon /></button>
                     </form>
                     <React.Fragment>

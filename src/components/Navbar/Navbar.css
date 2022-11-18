@@ -20,11 +20,12 @@
     border: none;
 }
 
-.search-input {
+.navbar-search-input {
     background: white;
     border: none;
     outline: none;
     font-family: 'Kumbh Sans', sans-serif;
+    font-size: medium;
 }
 
 .search-btn {
@@ -58,7 +59,7 @@
         display: initial;
     }
 
-    .search-input {
+    .navbar-search-input {
         width: 160px;
     }
 
