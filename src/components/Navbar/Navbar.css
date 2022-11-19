@@ -3,14 +3,14 @@
     background: white;
 }
 
-.navbar-link, .navbar-link span{
+.navbar-link, .navbar-link span {
     color: black;
     text-decoration: none;
     font-family: 'Kumbh Sans', sans-serif;
     margin: 5px 20px;
 }
 
-.navbar-link:hover, .navbar-link span:hover {
+.navbar-link:hover, .navbar-link span:hover, .active-link {
     color: var(--light-pink);
 }
 
@@ -63,7 +63,7 @@
         width: 160px;
     }
 
-    .profile-btn{
+    .profile-btn {
         margin-left: -5px !important;
     }
 }

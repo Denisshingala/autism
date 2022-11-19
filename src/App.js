@@ -15,7 +15,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<Signup />} />
-        <Route exact path="/game" element={<Games />} />
+        <Route exact path="/games" element={<Games />} />
         <Route exact path="/dummy" element={<Dummy />} />
       </Routes>
     </BrowserRouter>

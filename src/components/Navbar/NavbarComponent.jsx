@@ -33,10 +33,10 @@ const Navbar = () => {
                     </form>
                 </ListItem>
                 <Divider />
-                {['Explore', 'Games', 'Contact Us', 'Pricing'].map((text) => (
-                    <ListItem key={text} disablePadding>
+                {Object.entries({ 'explore': 'Explore', 'games': 'Games', 'contact-us': 'Contact Us', 'pricing': 'Pricing' }).map(([key, value]) => (
+                    <ListItem key={key} disablePadding>
                         <ListItemButton>
-                            <NavLink to={'/' + text} className='navbar-link'> <ListItemText primary={text} /> </NavLink>
+                            <NavLink to={'/' + key} className={({ isActive }) => isActive ? 'active-link navbar-link' : 'navbar-link'}> <ListItemText primary={value} /> </NavLink>
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -45,7 +45,7 @@ const Navbar = () => {
             <List>
                 <ListItem disablePadding>
                     <ListItemButton>
-                        <NavLink to='/Setting' className='navbar-link'> <ListItemText primary='Setting' /> </NavLink>
+                        <NavLink to='/setting' className={({ isActive }) => isActive ? 'active-link navbar-link' : 'navbar-link'}> <ListItemText primary='Setting' /> </NavLink>
                     </ListItemButton>
                 </ListItem>
             </List>
@@ -57,12 +57,12 @@ const Navbar = () => {
             <nav className="nav-bar">
                 {/* <button class='menu-btn' id='menu-btn'><MenuIcon /></button> */}
                 <div className="container-fluid w-100">
-                    <NavLink to="#" className=" navbar-link"><img src={logoPath} alt="Autism Logo" /></NavLink>
-                    <NavLink to="#" className="navbar-link main-navbar-link">Explore</NavLink>
-                    <NavLink to="#" className="navbar-link main-navbar-link">Games</NavLink>
-                    <NavLink to="#" className="navbar-link main-navbar-link">Contact Us</NavLink>
-                    <NavLink to="#" className="navbar-link main-navbar-link">Pricing</NavLink>
-                    <NavLink to="#" className="navbar-link main-navbar-link">Setting</NavLink>
+                    <NavLink to="/" className=" navbar-link"><img src={logoPath} alt="Autism Logo" /></NavLink>
+                    <NavLink to="/" className={({ isActive }) => isActive ? 'active-link navbar-link main-navbar-link' : 'navbar-link main-navbar-link'}>Explore</NavLink>
+                    <NavLink to="/games" className={({ isActive }) => isActive ? 'active-link navbar-link main-navbar-link' : 'navbar-link main-navbar-link'}>Games</NavLink>
+                    <NavLink to="/contact-us" className={({ isActive }) => isActive ? 'active-link navbar-link main-navbar-link' : 'navbar-link main-navbar-link'}>Contact Us</NavLink>
+                    <NavLink to="/pricing" className={({ isActive }) => isActive ? 'active-link navbar-link main-navbar-link' : 'navbar-link main-navbar-link'}>Pricing</NavLink>
+                    <NavLink to="/setting" className={({ isActive }) => isActive ? 'active-link navbar-link main-navbar-link' : 'navbar-link main-navbar-link'}>Setting</NavLink>
                     <IconButton className='float-end ms-3 profile-btn'>
                         <AccountCircle fontSize="large" />
                     </IconButton>
