@@ -6,7 +6,7 @@ import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
 import CampaignIcon from '@mui/icons-material/Campaign';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
-// import TeamComponent from '../Team/TeamComponent';
+import TeamComponent from '../Team/TeamComponent';
 
 const HomeComponent = () => {
     return (
@@ -86,7 +86,7 @@ const HomeComponent = () => {
                         </div>
                     </div>
                 </div>
-                {/* <TeamComponent /> */}
+                <TeamComponent />
             </div>
         </>
     );

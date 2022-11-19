@@ -26,7 +26,7 @@ const TeamComponent = () => {
                                 <img src={Designer} alt="Work" />
                             </div>
                             <div className="profile-details">
-                                <img src={Shruti} alt="Profile" width="50" height="50" />
+                                <img src={Shruti} alt="Profile" className="profile-img" />
                                 <div className="name-job">
                                     <h3 className="name">Shruti Jagtap</h3>
                                     <h4 className="job">Product Designer & Researcher</h4>
@@ -38,7 +38,7 @@ const TeamComponent = () => {
                                 <img src={FinancialOfficer} alt="Work" />
                             </div>
                             <div className="profile-details">
-                                <img src={Jap} alt="Profile" width="50" height="50" />
+                                <img src={Jap} alt="Profile" className="profile-img" />
                                 <div className="name-job">
                                     <h3 className="name">Jap Hirpara</h3>
                                     <h4 className="job">Financial Officer</h4>
@@ -50,7 +50,7 @@ const TeamComponent = () => {
                                 <img src={Developer} alt="Work" />
                             </div>
                             <div className="profile-details">
-                                <img src={Shubham} alt="Profile" width="50" height="50" />
+                                <img src={Shubham} alt="Profile" className="profile-img" />
                                 <div className="name-job">
                                     <h3 className="name">Shubham Dusane</h3>
                                     <h4 className="job">Full Stack Developer</h4>
@@ -62,7 +62,7 @@ const TeamComponent = () => {
                                 <img src={Developer} alt="Work" />
                             </div>
                             <div className="profile-details">
-                                <img src={AnkitVerma} alt="Profile" width="50" height="50" />
+                                <img src={AnkitVerma} alt="Profile" className="profile-img" />
                                 <div className="name-job">
                                     <h3 className="name">Ankit Verma</h3>
                                     <h4 className="job">Full Stack Developer</h4>
@@ -74,7 +74,7 @@ const TeamComponent = () => {
                                 <img src={Developer} alt="Work" />
                             </div>
                             <div className="profile-details">
-                                <img src={AnkitChotaliya} alt="Profile" width="50" height="50" />
+                                <img src={AnkitChotaliya} alt="Profile" className="profile-img" />
                                 <div className="name-job">
                                     <h3 className="name">Ankit Chotaliya</h3>
                                     <h4 className="job">Full Stack Developer</h4>
@@ -86,7 +86,7 @@ const TeamComponent = () => {
                                 <img src={Developer} alt="Work" />
                             </div>
                             <div className="profile-details">
-                                <img src={Denis} alt="Profile" width="50" height="50" />
+                                <img src={Denis} alt="Profile" className="profile-img" />
                                 <div className="name-job">
                                     <h3 className="name">Denis Shingala</h3>
                                     <h4 className="job">Full Stack Developer</h4>

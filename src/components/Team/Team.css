@@ -1,21 +1,6 @@
 /* Google Fonts - Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
-
-body {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #efefef;
-}
-
 .container {
     max-width: 1120px;
     width: 100%;
@@ -33,7 +18,7 @@ body {
 }
 
 .card .image-box {
-    height: 200px;
+    height: 20vw;
 }
 
 .card .image-box img {
@@ -46,8 +31,7 @@ body {
     display: flex;
     align-items: center;
     column-gap: 12px;
-    padding: 15px;
-    padding-bottom: 25px;
+    padding: 2vw;
 }
 
 .card .profile-details img {
@@ -57,14 +41,20 @@ body {
 }
 
 .profile-details .name {
-    font-size: 15px;
+    font-size: 1.7vw;
     font-weight: 500;
+    margin-bottom: 0vw !important;
 }
 
 .profile-details .job {
-    font-size: 12px;
+    font-size: 1.1vw;
     font-weight: 500;
     color: #4d4d4d;
+}
+
+.profile-img {
+    width: 4.5vw !important;
+    height: 5vw !important;
 }
 
 .swiper-navBtn {
@@ -90,28 +80,16 @@ body {
     }
 }
 
-.swiper-button-prev {
+.swiper-button-prev, .swiper-button-next {
     color: #000;
-    height: 40px;
-    width: 40px;
+    height: 5vw;
+    width: 5vw;
     background: #fff;
     border-radius: 50%;
     border: 1px solid black;
+    padding: 1vw;
 }
 
-.swiper-button-prev::after {
-    font-size: small;
-}
-
-.swiper-button-next {
-    color: #000;
-    height: 40px;
-    width: 40px;
-    background: #fff;
-    border-radius: 50%;
-    border: 1px solid black;
-}
-
-.swiper-button-next::after {
-    font-size: small;
+.swiper-button-prev::after, .swiper-button-next::after {
+    font-size: 2vw;
 }
