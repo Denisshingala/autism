@@ -1,11 +1,11 @@
-import "./HandMatchingGameComponent.css";
+import "./CardMatchingGame.css";
 import { handsList } from "./utils/fakeData";
 import { shuffle } from "./utils/helper";
 import { DropTarget } from "react-drag-drop-container";
 import { DragDropContainer } from "react-drag-drop-container";
 import { useEffect, useRef, useState } from "react";
 
-function HandMatchingGameComponent() {
+function CardMatchingGame() {
   const [score, setScore] = useState(0);
   console.log(score);
 
@@ -81,4 +81,4 @@ function HandMatchingGameComponent() {
   return <div className="game-container grid-container">{gameObjs}</div>;
 }
 
-export default HandMatchingGameComponent;
+export default CardMatchingGame;
