@@ -1,4 +1,5 @@
 import BackButton from "../BackButton";
+import Timer from "../Timer";
 import "./Game.css";
 
 export default function Game() {
@@ -7,7 +8,7 @@ export default function Game() {
       <BackButton />
       <div className="game-header">
         <div className="game-title">Card matching</div>
-        <div className="game-timer">Remaining Time: 09:00</div>
+        <Timer mins={9} />
       </div>
     </div>
   );
