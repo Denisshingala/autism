@@ -8,10 +8,19 @@ export default function Game() {
     <div className="game">
       <BackButton />
       <div className="game-header">
-        <div className="game-title">Card matching</div>
+        <h2 className="game-title">Card matching</h2>
         <Timer mins={9} />
       </div>
       <CardMatchingGame />
+      <div className="game-details">
+        <h3>Details</h3>
+        <p>
+          This game can help your pupils learn to draw shapes and lines easily.
+          You will get multiple objects for this activity. You can use our
+          AutsiPen to make it more connected to the real world. You can get it
+          from our Explore page.
+        </p>
+      </div>
     </div>
   );
 }

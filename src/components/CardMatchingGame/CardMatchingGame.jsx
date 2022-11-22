@@ -1,3 +1,4 @@
+import gameContainerBackground from "../../images/game-container-background.svg";
 import "./CardMatchingGame.css";
 import { handsList } from "./utils/fakeData";
 import { shuffle } from "./utils/helper";
@@ -78,7 +79,14 @@ function CardMatchingGame() {
     )
   );
 
-  return <div className="game-container grid-container">{gameObjs}</div>;
+  return (
+    <div
+      className="game-container grid-container"
+      style={{ backgroundImage: `url(${gameContainerBackground})` }}
+    >
+      {gameObjs}
+    </div>
+  );
 }
 
 export default CardMatchingGame;
