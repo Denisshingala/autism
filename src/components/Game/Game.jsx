@@ -18,7 +18,7 @@ export default function Game() {
       <div className="game-header">
         <h2 className="game-title">Card matching</h2>
         <Timer
-          secs={20}
+          secs={15}
           onLast10SecsRemaining={() => setLast10SecsRemaining(true)}
           onTimerChange={(timer) => setTimer(timer)}
         />
@@ -36,31 +36,52 @@ export default function Game() {
         >
           <div
             style={{
-              height: "30px",
-              visibility:
-                handle.active && last10SecsRemaining ? "visible" : "hidden",
+              display: "flex",
+              justifyContent: "end",
+              alignItems: "center",
             }}
           >
-            Remaining Time:{" "}
-            <span style={{ fontWeight: "bold", color: "red" }}>
-              {timer.substring(3)}
-            </span>
+            <div
+              style={{
+                height: "fit-content",
+                zIndex: 1,
+                visibility:
+                  handle.active && last10SecsRemaining ? "visible" : "hidden",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "end",
+                paddingRight: "6vw",
+              }}
+            >
+              Remaining Time:
+              <span
+                style={{
+                  fontWeight: "bold",
+                  color: "red",
+                  fontSize: "2rem",
+                  marginLeft: "10px",
+                }}
+              >
+                {timer.substring(3)}
+              </span>
+            </div>
+
+            <div
+              className="fullscreen-icon-container"
+              onClick={handle.active ? handle.exit : handle.enter}
+              style={{
+                height: "6vw",
+                width: "6vw",
+                minHeight: "35px",
+                minWidth: "35px",
+                maxHeight: "60px",
+                maxWidth: "60px",
+              }}
+            >
+              <img src={fullscreenIcon} />
+            </div>
           </div>
 
-          <div
-            className="fullscreen-icon-container"
-            onClick={handle.active ? handle.exit : handle.enter}
-            style={{
-              height: "5vw",
-              width: "5vw",
-              position: "absolute",
-              top: "0%",
-              right: "0%",
-              zIndex: "1",
-            }}
-          >
-            <img src={fullscreenIcon} />
-          </div>
           <CardMatchingGame />
         </div>
       </FullScreen>
