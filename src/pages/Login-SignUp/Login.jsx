@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login-signup.css";
 import ArrowBackIosOutlinedIcon from "@mui/icons-material/ArrowBackIosOutlined";
 import BrandImage from "../../images/login_signup_brand_image.png";
@@ -8,8 +8,8 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 
-
 function Login() {
+  let [userDetail, setUserDetail] = useState({ email: "", password: "" });
 
   let currentYear = new Date().getFullYear();
 
@@ -24,13 +24,12 @@ function Login() {
           <form action="" id="login-signup-form">
             <h2>Login</h2>
             <div>
-              <p style={{ margin: "30px 0 10px 0", color: "#888888" }}>
-                Enter your email address
-              </p>
+              <p style={{ margin: "30px 0 10px 0", color: "#888888" }}>Email</p>
               <TextField
                 id="email"
                 label="example: shubham@gmail.com"
                 type="text"
+                onChange={(e) => setUserDetail({ email: e.target.value })}
                 style={{ width: "100%" }}
               />
             </div>
@@ -38,9 +37,21 @@ function Login() {
               <p style={{ margin: "30px 0 10px 0", color: "#888888" }}>
                 Password
               </p>
-              <PasswordField />
+              <PasswordField
+                onChange={(e) => setUserDetail({ password: e.target.value })}
+              />
             </div>
-            <Link to="/" style={{ color: "#7BAAEA", float: "right", textDecoration: "none", marginTop: "5px" }}>Forgot password</Link>
+            <Link
+              to="/"
+              style={{
+                color: "#7BAAEA",
+                float: "right",
+                textDecoration: "none",
+                marginTop: "5px",
+              }}
+            >
+              Forgot password
+            </Link>
             <Button variant="contained" className="login-signup-button">
               Login
             </Button>
