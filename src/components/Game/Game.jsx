@@ -5,16 +5,23 @@ import CardMatchingGame from "../CardMatchingGame";
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import fullscreenIcon from "../../images/fullscreen-icon.svg";
 import gameContainerBackground from "../../images/game-container-background.svg";
+import { useState } from "react";
 
 export default function Game() {
   const handle = useFullScreenHandle();
+  const [last10SecsRemaining, setLast10SecsRemaining] = useState(false);
+  const [timer, setTimer] = useState("00:00");
 
   return (
     <div className="game">
       <BackButton />
       <div className="game-header">
         <h2 className="game-title">Card matching</h2>
-        <Timer mins={9} />
+        <Timer
+          secs={20}
+          onLast10SecsRemaining={() => setLast10SecsRemaining(true)}
+          onTimerChange={(timer) => setTimer(timer)}
+        />
       </div>
 
       <FullScreen handle={handle}>
@@ -27,6 +34,19 @@ export default function Game() {
             position: "relative",
           }}
         >
+          <div
+            style={{
+              height: "30px",
+              visibility:
+                handle.active && last10SecsRemaining ? "visible" : "hidden",
+            }}
+          >
+            Remaining Time:{" "}
+            <span style={{ fontWeight: "bold", color: "red" }}>
+              {timer.substring(3)}
+            </span>
+          </div>
+
           <div
             className="fullscreen-icon-container"
             onClick={handle.active ? handle.exit : handle.enter}
