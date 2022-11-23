@@ -1,4 +1,3 @@
-import gameContainerBackground from "../../images/game-container-background.svg";
 import "./CardMatchingGame.css";
 import { handsList } from "./utils/fakeData";
 import { shuffle } from "./utils/helper";
@@ -89,25 +88,15 @@ function CardMatchingGame() {
 
   return (
     <>
-      <div
-        className="game-container grid-container"
-        style={{ backgroundImage: `url(${gameContainerBackground})` }}
-      >
-        {gameObjs}
-      </div>
-      <div
-        className="game-result-container"
-        style={{
-          backgroundImage: `url(${gameContainerBackground})`,
-        }}
-      >
+      <div className="game-container grid-container">{gameObjs}</div>
+      <div className="game-result-container">
         {cardMatchedList.map((cell) => (
           <div key={cell.id} style={{ display: "flex", width: "20%" }}>
             <div>
-              <img src={`${cell.img.l}.png`} alt="" />
+              <img src={`${cell.img.l}.png`} draggable={false} alt="" />
             </div>
             <div>
-              <img src={`${cell.img.r}.png`} alt="" />
+              <img src={`${cell.img.r}.png`} draggable={false} alt="" />
             </div>
           </div>
         ))}
