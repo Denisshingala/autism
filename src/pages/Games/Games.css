@@ -1,17 +1,36 @@
+.games-page{
+    background: #FAFAFA;
+    border: 1px solid transparent;
+}
 .games-hero-img img{
     width: 100%;
     /* border: 1px solid red; */
     margin: 0;
 }
+.page-title{
+    font-family: 'Kumbh Sans', sans-serif !important;
+    font-weight: 400;
+    color: #252422;
+}
+.page-title p{
+    font-size: 20px;
+    color: #777B7D;
+}
+.center-class{
+    
+}
 .games-left-section{
-    /* background: #ffffff; */
+    background: #ffffff;
     position: relative;
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding-top: 10px;
     height:fit-content;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 340px;
 }
 .games-right-section{
-    background: #ffffff;
+    /* background: #ffffff; */
     justify-content: center;
 }
 .title{
@@ -21,14 +40,15 @@
     font-weight: 600;
 }
 .search-box{
-    /* width: 419px; used in figma */
+    width: 100%;
     margin: 10px 0;
-    height: 50px;
+    padding-left: 0 !important;
     display: flex;
+    position: relative;
 }
 .search-icon{
     height: 50px !important;
-    width: 40px!important;
+    width: 10%;
     background-color: #E2EDFB;
     display: flex;
     align-items: center;
@@ -40,6 +60,7 @@
 .search-input{
     margin: 0 !important;
     background-color: #E2EDFB;
+    width: 100%;
     border: none;
     outline: none;
     height: 50px !important;
@@ -49,7 +70,7 @@
     border: none;
     outline: none;
     height: 50px !important;
-    width: 75px;
+    width: 100%;
     color: #C0C0C0;
     border-radius: 0 5px 5px 0;
 }
@@ -80,9 +101,15 @@
     padding: 0 !important;
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     justify-content: center;
+    background: #ffffff;
+}
+.game-card-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .game-card-img img{
-    width: 400px !important;
+    width: 90% !important;
     height: 290px;
     background-position: center;
     background-attachment: scroll;
@@ -99,4 +126,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+.games-left-section{
+    width: 440px;
+}
+.center-class{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 }

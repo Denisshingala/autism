@@ -12,6 +12,7 @@
 /build
 
 package-lock.json
+todo.txt
 
 # misc
 .DS_Store
