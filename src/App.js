@@ -7,15 +7,16 @@ import Games from './pages/Games/Games'
 import GamesDetails from './pages/GameDetails/GameDetails'
 import Dummy from "./pages/Dummy";
 import Home from "./pages/Home/Home";
+// import Login from "./pages/Login";
+import HomeComponent from "./components/Home/HomeComponent";
+import Game from "./components/Game";
+
 function App() {
   return (
     <Routes>
       <Route exact path="/" element={<Home />} />
       <Route exact path="/login" element={<Login />} />
-      <Route exact path="/signup" element={<Signup/>} />
-      <Route exact path="/games" element={<Games />} />
-      <Route exact path="/dummy" element={<Dummy />} />
-      <Route exact path="/gameDetails" element={<GamesDetails />} />
+      <Route exact path="/game" element={<Game />} />
     </Routes>
   );
 }
