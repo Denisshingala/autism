@@ -1,10 +1,10 @@
 import "./App.css";
 import React from "react";
 import { Routes, Route } from "react-router";
-<<<<<<< HEAD
 import Login from "./pages/Login-SignUp/Login";
-import Signup from "./pages/Login-SignUp/Signup";
+import Signup from './pages/Login-SignUp/Signup'
 import Home from "./pages/Home/Home";
+// import Game from "./pages/Game";
 import Games from "./pages/Games/Games";
 import Dummy from "./pages/Dummy";
 import { BrowserRouter } from "react-router-dom";
@@ -21,20 +21,5 @@ function App() {
       </Routes>
     </BrowserRouter>
   )
-=======
-import Login from "./pages/Login";
-import HomeComponent from "./components/Home/HomeComponent";
-import Game from "./components/Game";
-
-function App() {
-  return (
-    <Routes>
-      <Route exact path="/" element={<HomeComponent />} />
-      <Route exact path="/login" element={<Login />} />
-      <Route exact path="/game" element={<Game />} />
-    </Routes>
-  );
->>>>>>> e033f60f50742a400823d3b94a98a57f24114016
 }
-
 export default App;
