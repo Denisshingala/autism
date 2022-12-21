@@ -7,17 +7,18 @@ import PasswordField from "../../components/PasswordField";
 import SelectField from "../../components/SelectField";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 let currentYear = new Date().getFullYear();
 let gender = ["Male", "Female", "Other"];
 let country = ["India", "Australia", "Lanka"];
 
 function Signup() {
+  const navigate=useNavigate();
   return (
     <div id="container">
       <div id="login-signup-container">
-        <Button className="m-4">
+        <Button className="m-4" onClick={()=>{navigate("/")}}>
           <ArrowBackIosOutlinedIcon />
           <span className="backText">Exit</span>
         </Button>

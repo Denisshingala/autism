@@ -6,17 +6,17 @@ import Logo from "../../images/logo.png";
 import PasswordField from "../../components/PasswordField";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 function Login() {
 
   let currentYear = new Date().getFullYear();
-
+  const navigate=useNavigate();
   return (
     <div id="container">
       <div id="login-signup-container">
-        <Button className="m-4">
+        <Button className="m-4" onClick={()=>{navigate("/")}}>
           <ArrowBackIosOutlinedIcon />
           <span className="backText">Exit</span>
         </Button>

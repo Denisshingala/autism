@@ -1,14 +1,16 @@
-import BackButton from "../BackButton";
-import Timer from "../Timer";
+import BackButton from "../../components/BackButton";
+import Timer from "../../components/Timer";
 import "./Game.css";
-import CardMatchingGame from "../CardMatchingGame";
+import CardMatchingGame from "../../components/CardMatchingGame";
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import fullscreenIcon from "../../images/fullscreen-icon.svg";
 import gameContainerBackground from "../../images/game-container-background.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 export default function Game() {
   const handle = useFullScreenHandle();
+  const navigate=useNavigate();
   const [last10SecsRemaining, setLast10SecsRemaining] = useState(false);
   const [timer, setTimer] = useState("00:00");
 

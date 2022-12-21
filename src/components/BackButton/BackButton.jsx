@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router";
 import "./BackButton.css";
 
-export default function BackButton({ title = "Back" }) {
+const BackButton=({ title = "Back" })=> {
+  const navigate=useNavigate();
   return (
-    <div className="back">
+    <>
+    <div className="back" onClick={()=>{navigate(-1)}}>
       <svg
         className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
         focusable="false"
@@ -15,5 +18,8 @@ export default function BackButton({ title = "Back" }) {
       </svg>
       {title}
     </div>
+    </>
   );
 }
+
+export default BackButton
