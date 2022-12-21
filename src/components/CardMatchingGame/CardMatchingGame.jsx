@@ -93,10 +93,10 @@ function CardMatchingGame() {
         {cardMatchedList.map((cell) => (
           <div key={cell.id} style={{ display: "flex", width: "20%" }}>
             <div>
-              <img src={`${cell.img.l}.png`} draggable={false} alt="" />
+              <img className="CardMatchingGame-img" src={`${cell.img.l}.png`} draggable={false} alt="" />
             </div>
             <div>
-              <img src={`${cell.img.r}.png`} draggable={false} alt="" />
+              <img className="CardMatchingGame-img" src={`${cell.img.r}.png`} draggable={false} alt="" />
             </div>
           </div>
         ))}

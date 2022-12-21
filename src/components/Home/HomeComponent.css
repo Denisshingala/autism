@@ -1,0 +1,163 @@
+.home-header1 {
+    background-image: url('../../images/explore_image1.png');
+    background-position: 90% 0%;
+    background-size: 50vw;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.home-header1-container, .home-header3-container {
+    font-family: 'Kumbh Sans', sans-serif !important;
+    font-size: 3vw;
+    font-weight: 400;
+}
+
+.home-header1-container {
+    padding: 8.5vw 2vw;
+    width: 40%;
+}
+
+.continue-btn {
+    width: 10vw;
+    height: 2.5vw;
+}
+
+.arrow, .continue-btn {
+    font-size: 1.05vw !important;
+}
+
+.home-header3 {
+    width: 95vw !important;
+    background-image: url('../../images/explore_image2.png');
+    background-position: 0% 50%;
+    background-size: 50vw;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.home-header3-container {
+    text-align: center;
+    width: 50%;
+    padding: 170px 0;
+}
+
+.home-header4 {
+    background-image: url('../../images/explore_image3.jpg');
+    background-position: 90% 0%;
+    background-size: 25vw;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.home-header4-container {
+    width: 50%;
+    border-radius: 10px;
+}
+
+.home-header4-container .header {
+    font-size: 2.5vw;
+}
+
+.home-header4-container li {
+    margin: 30px 0;
+    list-style: inside;
+    font-size: 1.5vw !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .home-header1, .home-header3, .home-header4 {
+        background-position: 50% 50%;
+        background-size: 350px;
+        text-align: center;
+    }
+
+    .home-header1 {
+        background-image: linear-gradient(269deg, white, rgba(219, 213, 213, 0.473), white), url('../../images/explore_image1.png');
+    }
+
+    .home-header3 {
+        background-image: linear-gradient(269deg, white, rgba(219, 213, 213, 0.473), white), url('../../images/explore_image2.png');
+    }
+
+    .home-header4 {
+        background-image: linear-gradient(269deg, white, rgba(219, 213, 213, 0.473), white), url('../../images/explore_image3.jpg');
+    }
+
+    .home-header1-container, .home-header3-container, .home-header4-container {
+        font-size: 25px;
+        width: 100%;
+        color: black;
+    }
+
+    .home-header3-container {
+        padding: 140px 0;
+    }
+
+    .home-header4-container .header{
+        font-size: 17px;
+    }
+
+    .home-header4-container li {
+        font-size: 13px !important;
+        margin: 10px 0;
+    }
+
+    .continue-btn {
+        width: 90px;
+        height: 20px;
+    }
+
+    .arrow, .continue-btn {
+        font-size: 10px !important;
+    }
+}
+
+.home-header2 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.component-img {
+    grid-area: icon;
+}
+
+.component-header {
+    grid-area: header;
+}
+
+.component-footer {
+    grid-area: footer;
+    font-size: 12px;
+    color: gray;
+}
+
+.component {
+    display: grid;
+    grid-template-areas: 'icon header header header'
+        'icon footer footer footer'
+        'icon footer footer footer';
+    width: 300px;
+    margin: 15px 0;
+}
+
+.img-icon {
+    font-size: 60px !important;
+    border-radius: 50%;
+    background-color: var(--light-green);
+    padding: 10px;
+    margin: 0px 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .component {
+        width: 450px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .component {
+        width: 300px;
+    }
+}
