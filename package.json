@@ -14,7 +14,12 @@
     "jquery": "^3.6.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+<<<<<<< HEAD
     "react-icons": "^4.6.0",
+=======
+    "react-drag-drop-container": "^6.1.1",
+    "react-full-screen": "^1.1.1",
+>>>>>>> e033f60f50742a400823d3b94a98a57f24114016
     "react-router": "^6.4.3",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",

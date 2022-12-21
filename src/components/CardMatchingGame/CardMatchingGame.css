@@ -1,0 +1,22 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5px;
+  padding: 5px;
+  justify-content: center;
+}
+
+.grid-container > div {
+  border: 1px solid rgb(255, 255, 255);
+}
+
+img {
+  width: 100%;
+  margin: auto;
+}
+
+.game-result-container {
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+}
