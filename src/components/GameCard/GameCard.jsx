@@ -1,21 +1,41 @@
-import React from 'react'
-import { useNavigate } from 'react-router'
-import { unstable_HistoryRouter } from 'react-router-dom';
-import './GameCard.css'
+import React from 'react';
+import { useNavigate } from 'react-router';
+import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
+
+import './GameCard.css';
+
 const GameCard = (props) => {
   const navigate = useNavigate();
-  const handleRedirect=(gmaeId)=>{
-   navigate("/game");
+  const handleRedirect = (gameUrl) => {
+    navigate("/" + gameUrl);
   }
   return (
-    <div className='col-md-6 col-sm-12 game-card' onClick={()=>handleRedirect(props.gameId)}>
+    <>
+      {/* <div className='game-card' >
         <div className='game-card-img'>
-          <img src={props.imgSrc} alt="autism game" />
+          <img src={ } alt="autism game" />
         </div>
         <div className='game-card-title'>
-          <h4 style={{ background: props.backgroundColor }}>{props.gameTitle}</h4>
+          <h4 ></h4>
         </div>
-    </div>
+      </div> */}
+      <Card sx={{ maxWidth: 345, margin: 1 }} className='shadow-lg game-card'>
+        <CardActionArea onClick={() => handleRedirect(props.gameId)}>
+          {/* <CardActionArea> */}
+          <CardMedia
+            component="img"
+            image={props.imgSrc}
+            alt="green iguana"
+            className="img-fluid card-img"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div" className='card-title' style={{ background: props.backgroundColor }}>
+              {props.gameTitle}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </>
   )
 }
 

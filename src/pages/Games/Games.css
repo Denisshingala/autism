@@ -5,8 +5,14 @@
 
 .games-hero-img img {
     width: 100%;
-    /* border: 1px solid red; */
     margin: 0;
+}
+
+.games-page-body {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .page-title {
@@ -20,19 +26,80 @@
     color: #777B7D;
 }
 
-.games-left-section {
-    background: #ffffff;
-    position: relative;
+.left-section {
+    width: 20vw;
+    background-color: #ffffff;
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding-top: 10px;
-    height: fit-content;
-    margin-bottom: 20px;
-    padding: 10px;
-    width: 340px;
+    padding: 1vw;
+    margin: 1vw 0;
+    font-size: 1.2vw;
 }
 
+.right-section {
+    padding: 2vw;
+    margin: 1vw 0;
+    width: 70vw !important;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.left-section .title {
+    font-weight: bold;
+    margin: 1vw 0;
+}
+
+.search-bar {
+    width: 100%;
+    height: 5vw !important;
+    background-color: var(--light-blue);
+    margin-bottom: 1vw !important;
+}
+
+.search-bar .MuiInputBase-root {
+    height: 5vw !important;
+    padding: 0 1.2vw;
+}
+
+.search-bar svg {
+    font-size: 1.4vw !important;
+}
+
+.search-bar fieldset {
+    border: none !important;
+}
+
+.search-bar .search-btn {
+    border-radius: 50% !important;
+    min-width: auto !important;
+    padding: 1vw !important;
+    color: #777B7D !important;
+}
+
+.game-ls {
+    display: block;
+    margin: 0px;
+    padding: 5px 0;
+    color: #777B7D;
+    text-decoration: none;
+    font-weight: 400;
+    padding-left: 13px;
+}
+
+.game-ls-active {
+    color: #252422;
+    font-weight: 500;
+    transition: 0.2s all linear;
+    border: 0;
+    border-left: #FE93A0;
+    border-style: solid;
+    border-left: 3px solid #FE93A0;
+    padding-left: 10px;
+}
+
+/* 
 .games-right-section {
-    /* background: #ffffff; */
+    background: #ffffff;
     justify-content: center;
 }
 
@@ -80,28 +147,7 @@
     width: 100%;
     color: #C0C0C0;
     border-radius: 0 5px 5px 0;
-}
-
-.game-ls-active {
-    color: #252422;
-    font-weight: 500;
-    margin: 15px 0;
-    list-style: none;
-    transition: 0.2s all linear;
-    /* border: 0;
-    border-left: #FE93A0;
-    border-style: solid; */
-    border-left: 3px solid #FE93A0;
-    padding-left: 10px;
-}
-
-.game-ls {
-    color: #777B7D;
-    font-weight: 400;
-    margin: 15px 0;
-    list-style: none;
-    padding-left: 13px;
-}
+} 
 
 .game-card {
     width: 415px !important;
@@ -125,12 +171,12 @@
     height: 290px;
     background-position: center;
     background-attachment: scroll;
-    /* border: 2px solid red; */
+    border: 2px solid red;
 
 }
 
 .game-card-title h4 {
-    /* background: #FFE2E5; */
+    background: #FFE2E5;
     padding: 0 !important;
     width: 70% !important;
     padding-left: 10px !important;
@@ -152,3 +198,5 @@
         align-items: center;
     }
 }
+
+*/

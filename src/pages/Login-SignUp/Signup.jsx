@@ -9,8 +9,8 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { Link, useNavigate } from 'react-router-dom';
 
-
 const Signup = () => {
+  const navigate = useNavigate();
   const [country, setCountryData] = useState([]);
   let currentYear = new Date().getFullYear();
   let gender = ["Male", "Female", "Other"];
@@ -43,7 +43,7 @@ const Signup = () => {
   return (
     <div id="container">
       <div id="login-signup-container">
-        <Button className="m-4" onClick={()=>{navigate("/")}}>
+        <Button className="m-4" onClick={() => { navigate("/") }}>
           <ArrowBackIosOutlinedIcon />
           <span className="backText">Exit</span>
         </Button>

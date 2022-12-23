@@ -8,7 +8,7 @@ import './Navbar.css';
 const Navbar = () => {
 
     const [state, setState] = React.useState(false);
-    const isLoggedIn = localStorage.getItem('token') === null ? false : true;
+    const isLoggedIn = localStorage.getItem('token') ? false : true;
 
     const toggleDrawer = (open) => (event) => {
         if (
@@ -62,8 +62,6 @@ const Navbar = () => {
         }
     }
 
-
-
     const list = () => (
         <Box
             sx={{ width: 250 }}
@@ -100,7 +98,7 @@ const Navbar = () => {
                 <div className="container-fluid w-100">
                     <NavLink to="/" className=" navbar-link"><img className="img-fluid" src={logoPath} alt="Autism Logo" /></NavLink>
                     <NavLink to="/" className={({ isActive }) => isActive ? 'active-link navbar-link main-navbar-link' : 'navbar-link main-navbar-link'}>Explore</NavLink>
-                    <NavLink to="/gameDetails" className={({ isActive }) => isActive ? 'active-link navbar-link main-navbar-link' : 'navbar-link main-navbar-link'}>Games</NavLink>
+                    <NavLink to="/games" className={({ isActive }) => isActive ? 'active-link navbar-link main-navbar-link' : 'navbar-link main-navbar-link'}>Games</NavLink>
                     <NavLink to="/contact-us" className={({ isActive }) => isActive ? 'active-link navbar-link main-navbar-link' : 'navbar-link main-navbar-link'}>Contact Us</NavLink>
                     <NavLink to="/pricing" className={({ isActive }) => isActive ? 'active-link navbar-link main-navbar-link' : 'navbar-link main-navbar-link'}>Pricing</NavLink>
                     <NavLink to="/setting" className={({ isActive }) => isActive ? 'active-link navbar-link main-navbar-link' : 'navbar-link main-navbar-link'}>Setting</NavLink>
