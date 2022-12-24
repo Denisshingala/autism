@@ -1,5 +1,5 @@
 .game-card {
-    height: 20w !important;
+    min-height: 19vw;
     width: 20vw !important;
     border-radius: 6px;
 }
