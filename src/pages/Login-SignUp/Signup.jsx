@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./login-signup.css";
 import ArrowBackIosOutlinedIcon from "@mui/icons-material/ArrowBackIosOutlined";
 import BrandImage from "../../images/login_signup_brand_image.png";
@@ -9,16 +9,41 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { Link, useNavigate } from 'react-router-dom';
 
-let currentYear = new Date().getFullYear();
-let gender = ["Male", "Female", "Other"];
-let country = ["India", "Australia", "Lanka"];
+const Signup = () => {
+  const navigate = useNavigate();
+  const [country, setCountryData] = useState([]);
+  let currentYear = new Date().getFullYear();
+  let gender = ["Male", "Female", "Other"];
+  const [selectedCountry, setCountry] = useState({});
+  const [selectedGender, setGender] = useState({});
+  // let country = ["India", "Australia", "Lanka"];
 
-function Signup() {
-  const navigate=useNavigate();
+  useEffect(() => {
+    fetch("https://restcountries.com/v3.1/all")
+      .then(async (res) => await res.json())
+      .then((res) => {
+        let temp = [];
+        temp.push(res.map((data) => data.name.common));
+        return temp;
+      })
+      .then((data) => {
+        setCountryData(data[0]);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
+  const handleGender = (event) => {
+    setCountry(event.target.value);
+  }
+
+  const handleCountry = (event) => {
+    setGender(event.target.value);
+  }
+
   return (
     <div id="container">
       <div id="login-signup-container">
-        <Button className="m-4" onClick={()=>{navigate("/")}}>
+        <Button className="m-4" onClick={() => { navigate("/") }}>
           <ArrowBackIosOutlinedIcon />
           <span className="backText">Exit</span>
         </Button>
@@ -65,7 +90,8 @@ function Signup() {
                   size="200px"
                   field="gender"
                   fieldValues={gender}
-                  label="Choose"
+                  value={selectedGender}
+                  onChange={(e) => handleGender(e)}
                 />
               </div>
             </div>
@@ -75,9 +101,10 @@ function Signup() {
                 Country
               </p>
               <SelectField
-                field="gender"
+                field="country"
                 fieldValues={country}
-                label="Choose"
+                value={selectedCountry}
+                onChange={(e) => handleCountry(e)}
               />
             </div>
 

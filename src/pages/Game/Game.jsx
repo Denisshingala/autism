@@ -10,7 +10,7 @@ import { useNavigate } from "react-router";
 
 export default function Game() {
   const handle = useFullScreenHandle();
-  const navigate=useNavigate();
+  // const navigate=useNavigate();
   const [last10SecsRemaining, setLast10SecsRemaining] = useState(false);
   const [timer, setTimer] = useState("00:00");
 

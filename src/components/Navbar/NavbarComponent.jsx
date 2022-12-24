@@ -8,6 +8,7 @@ import './Navbar.css';
 const Navbar = () => {
 
     const [state, setState] = React.useState(false);
+    const isLoggedIn = localStorage.getItem('token') ? false : true;
 
     const toggleDrawer = (open) => (event) => {
         if (
@@ -20,6 +21,47 @@ const Navbar = () => {
         setState(open);
     };
 
+    const checkLogin = () => {
+        if (isLoggedIn) {
+            return (
+                <>
+                    <IconButton className='float-end ms-3 profile-btn'>
+                        <AccountCircle fontSize="large" />
+                    </IconButton>
+                    <form className='navbar-form float-end main-navbar-link'>
+                        <input type="search" name="search" className="navbar-search-input" placeholder='Search...' />
+                        <button type="submit" name='submit' className='search-btn'><SearchIcon /></button>
+                    </form>
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <NavLink to="/login" className="float-end main-navbar-link text-decoration-none py-1"><Button variant="contained">Register / Login</Button></NavLink>
+                </>
+            )
+        }
+    };
+
+    const loginBtn = () => {
+        if (isLoggedIn) {
+            return (
+                <>
+                    <form className='navbar-form'>
+                        <input type="search" name="search" className="navbar-search-input" placeholder='Search...' />
+                        <button type="submit" name='submit' className='search-btn'><SearchIcon /></button>
+                    </form>
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <NavLink to="/login" className="float-end text-decoration-none py-1"><Button variant="contained">Register / Login</Button></NavLink>
+                </>
+            )
+        }
+    }
+
     const list = () => (
         <Box
             sx={{ width: 250 }}
@@ -27,10 +69,7 @@ const Navbar = () => {
         >
             <List>
                 <ListItem>
-                    <form className='navbar-form'>
-                        <input type="search" name="search" className="navbar-search-input" placeholder='Search...' />
-                        <button type="submit" name='submit' className='search-btn'><SearchIcon /></button>
-                    </form>
+                    {loginBtn()}
                 </ListItem>
                 <Divider />
                 {Object.entries({ 'explore': 'Explore', 'games': 'Games', 'contact-us': 'Contact Us', 'pricing': 'Pricing' }).map(([key, value]) => (
@@ -59,17 +98,11 @@ const Navbar = () => {
                 <div className="container-fluid w-100">
                     <NavLink to="/" className=" navbar-link"><img className="img-fluid" src={logoPath} alt="Autism Logo" /></NavLink>
                     <NavLink to="/" className={({ isActive }) => isActive ? 'active-link navbar-link main-navbar-link' : 'navbar-link main-navbar-link'}>Explore</NavLink>
-                    <NavLink to="/gameDetails" className={({ isActive }) => isActive ? 'active-link navbar-link main-navbar-link' : 'navbar-link main-navbar-link'}>Games</NavLink>
+                    <NavLink to="/games" className={({ isActive }) => isActive ? 'active-link navbar-link main-navbar-link' : 'navbar-link main-navbar-link'}>Games</NavLink>
                     <NavLink to="/contact-us" className={({ isActive }) => isActive ? 'active-link navbar-link main-navbar-link' : 'navbar-link main-navbar-link'}>Contact Us</NavLink>
                     <NavLink to="/pricing" className={({ isActive }) => isActive ? 'active-link navbar-link main-navbar-link' : 'navbar-link main-navbar-link'}>Pricing</NavLink>
                     <NavLink to="/setting" className={({ isActive }) => isActive ? 'active-link navbar-link main-navbar-link' : 'navbar-link main-navbar-link'}>Setting</NavLink>
-                    <IconButton className='float-end ms-3 profile-btn'>
-                        <AccountCircle fontSize="large" />
-                    </IconButton>
-                    <form className='navbar-form float-end main-navbar-link'>
-                        <input type="search" name="search" className="navbar-search-input" placeholder='Search...' />
-                        <button type="submit" name='submit' className='search-btn'><SearchIcon /></button>
-                    </form>
+                    {checkLogin()}
                     <React.Fragment>
                         <Button className="menu-btn float-end mx-0 my-2" onClick={toggleDrawer(true)}><MenuIcon /></Button>
                         <SwipeableDrawer
