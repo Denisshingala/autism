@@ -11,24 +11,15 @@
     padding: 0px;
 }
 
-.footer h6 {
-    font-size: 1.7vw !important;
-}
-
-.footer h4 {
-    font-size: 1.7vw !important;
-}
-
-ul li {
+.footer ul li {
     font-family: 'Kumbh Sans';
     list-style: none;
     color: black;
     margin: 10px 0;
-    font-size: 1.3vw;
     cursor: pointer;
 }
 
-ul li:hover {
+.footer ul li:hover {
     color: var(--light-pink);
 }
 

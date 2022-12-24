@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router";
 import Login from "./pages/Login-SignUp/Login";
 import Signup from './pages/Login-SignUp/Signup'
 import Home from "./pages/Home/Home";
+import Pricing from "./pages/Pricing/Pricing";
 import Game from "./pages/Game";
 import Games from "./pages/Games/Games";
 
@@ -15,6 +16,7 @@ function App() {
       <Route exact path="/signup" element={<Signup />} />
       <Route exact path="/gameDetails" element={<Games />} />
       <Route exact path="/game" element={<Game />} />
+      <Route exact path="/pricing" element={<Pricing />} />
     </Routes>
   );
 }
