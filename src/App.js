@@ -7,6 +7,7 @@ import Home from "./pages/Home/Home";
 import Pricing from "./pages/Pricing/Pricing";
 import Game from "./pages/Game";
 import Games from "./pages/Games/Games";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route exact path="/gameDetails" element={<Games />} />
       <Route exact path="/game" element={<Game />} />
       <Route exact path="/pricing" element={<Pricing />} />
+      <Route exact path="/dashboard" element={<Dashboard/>} />
     </Routes>
   );
 }
