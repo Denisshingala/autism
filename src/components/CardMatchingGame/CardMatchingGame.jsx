@@ -53,8 +53,10 @@ function CardMatchingGame() {
           targetKey={idx.toString()}
           onHit={function (e) {
             console.log(e);
-            e.target.style.visibility = "hidden";
-            e.dragElem.style.visibility = "hidden";
+            e.target.parentElement.style.display = "none";
+            e.target.style.display = "none";
+            e.dragElem.parentElement.style.display = "none";
+            e.dragElem.style.display = "none";
             updateCardMatchedList((oldList) => [
               ...oldList,
               { ...handsList[e.dragData.imgId - 1] },
@@ -63,6 +65,7 @@ function CardMatchingGame() {
           }}
         >
           <DragDropContainer
+            id={"con" + idx}
             targetKey={cell.target}
             dragData={{
               imgRef: imageRefs.current,
@@ -77,7 +80,8 @@ function CardMatchingGame() {
           >
             <img
               src={`${cell.img}.png`}
-              alt=""
+              alt="game-icons"
+              className="img-fluid"
               ref={(el) => (imageRefs.current[idx] = el)}
             />
           </DragDropContainer>

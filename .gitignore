@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+/src/pages/Dummy.jsx
+/src/pages/dummy.css
 
 # testing
 /coverage

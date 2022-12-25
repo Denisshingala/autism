@@ -1,3 +1,10 @@
+.fullscreen-icon-container svg{
+  margin: 5px 15px;
+  padding: 5px;
+  font-size: 3rem !important;
+  background-color: white;
+}
+
 .game-header {
   display: flex;
   padding: 10px;

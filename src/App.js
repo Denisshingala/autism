@@ -8,7 +8,6 @@ import Pricing from "./pages/Pricing/Pricing";
 import Game from "./pages/Game";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Games from "./pages/Games/Games";
-import Dummy from "./pages/Dummy";
 import { BrowserRouter } from "react-router-dom";
 import ComingSoon from "./pages/ComingSoon/ComingSoon";
 
@@ -24,7 +23,6 @@ function App() {
         <Route exact path="/pricing" element={<Pricing />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/comingsoon" element={<ComingSoon />} />
-        <Route exact path="/dummy" element={<Dummy />} />
       </Routes>
     </BrowserRouter>
   );
