@@ -8,7 +8,7 @@ import './Navbar.css';
 const Navbar = () => {
 
     const [state, setState] = React.useState(false);
-    const isLoggedIn = localStorage.getItem('token') ? false : true;
+    const isLoggedIn = localStorage.getItem('token') ? true : false;
 
     const toggleDrawer = (open) => (event) => {
         if (
