@@ -3,10 +3,11 @@ import Timer from "../../components/Timer";
 import "./Game.css";
 import CardMatchingGame from "../../components/CardMatchingGame";
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
-import fullscreenIcon from "../../images/fullscreen-icon.svg";
 import gameContainerBackground from "../../images/game-container-background.svg";
+import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
+// import { useNavigate } from "react-router";
 
 export default function Game() {
   const handle = useFullScreenHandle();
@@ -71,16 +72,12 @@ export default function Game() {
             <div
               className="fullscreen-icon-container"
               onClick={handle.active ? handle.exit : handle.enter}
-              style={{
-                height: "6vw",
-                width: "6vw",
-                minHeight: "35px",
-                minWidth: "35px",
-                maxHeight: "60px",
-                maxWidth: "60px",
-              }}
             >
-              <img src={fullscreenIcon} />
+              {handle.active ?
+                <FullscreenExitIcon />
+                :
+                <FullscreenIcon />
+              }
             </div>
           </div>
 
