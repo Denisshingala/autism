@@ -22,3 +22,6 @@ export const Shubham = require('./Profile/Shubham.jpg');
 export const AnkitChotaliya = require('./Profile/Ankit_chotaliya.jpg');
 export const AnkitVerma = require('./Profile/Ankit_verma.jpg');
 export const Denis = require('./Profile/Denis.jpg');
+
+// Pricing
+export const IntroToPen = require('./intro_to_pen.png');
