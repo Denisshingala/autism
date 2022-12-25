@@ -12,11 +12,11 @@ function Login() {
   let [userDetail, setUserDetail] = useState({ email: "", password: "" });
 
   let currentYear = new Date().getFullYear();
-
+  // const navigate = useNavigate();
   return (
     <div id="container">
       <div id="login-signup-container">
-        <Button className="m-4">
+        <Button className="m-4" onClick={() => window.history.go(-1)}>
           <ArrowBackIosOutlinedIcon />
           <span className="backText">Exit</span>
         </Button>
@@ -64,7 +64,7 @@ function Login() {
             <div id="logo-div">
               <img src={Logo} alt="" />
               <p style={{ fontSize: "12px", margin: "10px 0" }}>
-                @{currentYear} AutsiLearn
+                &copy;{currentYear} AutsiLearn
               </p>
             </div>
           </form>

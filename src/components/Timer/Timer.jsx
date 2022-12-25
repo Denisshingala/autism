@@ -1,7 +1,12 @@
 import "./Timer.css";
 import React, { useState, useRef, useEffect } from "react";
 
-export default function Timer({ mins = 0, secs = 0 }) {
+export default function Timer({
+  mins = 0,
+  secs = 0,
+  onLast10SecsRemaining = () => {},
+  onTimerChange = (currentTimer) => {},
+}) {
   const Ref = useRef(null);
 
   // The state for our timer
@@ -12,6 +17,11 @@ export default function Timer({ mins = 0, secs = 0 }) {
     const seconds = Math.floor((total / 1000) % 60);
     const minutes = Math.floor((total / 1000 / 60) % 60);
     const hours = Math.floor((total / 1000 / 60 / 60) % 24);
+
+    if (hours === 0 && minutes === 0 && seconds === 10) {
+      onLast10SecsRemaining();
+    }
+
     return {
       total,
       hours,
@@ -78,5 +88,6 @@ export default function Timer({ mins = 0, secs = 0 }) {
     clearTimer(getDeadTime());
   };
 
+  onTimerChange(timer);
   return <div className="game-timer">Remaining Time: {timer}</div>;
 }

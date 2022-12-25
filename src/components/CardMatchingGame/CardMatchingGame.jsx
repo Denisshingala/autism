@@ -14,6 +14,9 @@ function CardMatchingGame() {
   );
   console.log(positions);
 
+  const [cardMatchedList, updateCardMatchedList] = useState([]);
+  console.log(cardMatchedList);
+
   const imageRefs = useRef([]);
 
   useEffect(() => {
@@ -52,6 +55,10 @@ function CardMatchingGame() {
             console.log(e);
             e.target.style.visibility = "hidden";
             e.dragElem.style.visibility = "hidden";
+            updateCardMatchedList((oldList) => [
+              ...oldList,
+              { ...handsList[e.dragData.imgId - 1] },
+            ]);
             setScore(score + 1);
           }}
         >
@@ -60,6 +67,7 @@ function CardMatchingGame() {
             dragData={{
               imgRef: imageRefs.current,
               idx: idx,
+              imgId: cell.id,
             }}
             onDragStart={(data) => {
               const img = data.imgRef[data.idx];
@@ -78,7 +86,23 @@ function CardMatchingGame() {
     )
   );
 
-  return <div className="game-container grid-container">{gameObjs}</div>;
+  return (
+    <>
+      <div className="game-container grid-container">{gameObjs}</div>
+      <div className="game-result-container">
+        {cardMatchedList.map((cell) => (
+          <div key={cell.id} style={{ display: "flex", width: "20%" }}>
+            <div>
+              <img className="CardMatchingGame-img" src={`${cell.img.l}.png`} draggable={false} alt="" />
+            </div>
+            <div>
+              <img className="CardMatchingGame-img" src={`${cell.img.r}.png`} draggable={false} alt="" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
 }
 
 export default CardMatchingGame;
