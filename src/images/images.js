@@ -25,3 +25,6 @@ export const Denis = require('./Profile/Denis.jpg');
 
 // Pricing
 export const IntroToPen = require('./intro_to_pen.png');
+
+// coming soon
+export const ComingSoonImg = require('./coming-soon.png');

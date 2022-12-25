@@ -10,6 +10,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Games from "./pages/Games/Games";
 import Dummy from "./pages/Dummy";
 import { BrowserRouter } from "react-router-dom";
+import ComingSoon from "./pages/ComingSoon/ComingSoon";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/game" element={<Game />} />
         <Route exact path="/pricing" element={<Pricing />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route exact path="/comingsoon" element={<ComingSoon />} />
         <Route exact path="/dummy" element={<Dummy />} />
       </Routes>
     </BrowserRouter>
