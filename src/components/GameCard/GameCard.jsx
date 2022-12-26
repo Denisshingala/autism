@@ -7,20 +7,13 @@ import './GameCard.css';
 const GameCard = (props) => {
   const navigate = useNavigate();
   const handleRedirect = (gameUrl) => {
-    navigate("/" + gameUrl);
+    navigate(gameUrl);
   }
+
   return (
     <>
-      {/* <div className='game-card' >
-        <div className='game-card-img'>
-          <img src={ } alt="autism game" />
-        </div>
-        <div className='game-card-title'>
-          <h4 ></h4>
-        </div>
-      </div> */}
       <Card sx={{ maxWidth: 345, margin: 1 }} className='shadow-lg game-card'>
-        <CardActionArea style={{ height: "100%" }} onClick={() => handleRedirect(props.gameId)}>
+        <CardActionArea style={{ height: "100%" }} onClick={() => handleRedirect(props.gameUrl)}>
           <CardMedia
             component="img"
             image={props.imgSrc}

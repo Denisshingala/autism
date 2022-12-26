@@ -7,15 +7,15 @@ import { useEffect, useRef, useState } from "react";
 
 function CardMatchingGame() {
   const [score, setScore] = useState(0);
-  console.log(score);
+  // console.log(score);
 
-  const [positions, setPositions] = useState(
+  const [positions,] = useState(
     shuffle(new Array(12).fill(0).map((_, i) => i))
   );
-  console.log(positions);
+  // console.log(positions);
 
   const [cardMatchedList, updateCardMatchedList] = useState([]);
-  console.log(cardMatchedList);
+  // console.log(cardMatchedList);
 
   const imageRefs = useRef([]);
 
@@ -41,7 +41,7 @@ function CardMatchingGame() {
     };
   });
 
-  console.log(gameCells);
+  // console.log(gameCells);
   const gameObjs = gameCells.map((cell, idx) =>
     cell === 0 ? (
       <div className="game-object" key={idx}>
@@ -52,7 +52,7 @@ function CardMatchingGame() {
         <DropTarget
           targetKey={idx.toString()}
           onHit={function (e) {
-            console.log(e);
+            // console.log(e);
             e.target.parentElement.style.display = "none";
             e.target.style.display = "none";
             e.dragElem.parentElement.style.display = "none";

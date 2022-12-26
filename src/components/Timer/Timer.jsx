@@ -4,8 +4,8 @@ import React, { useState, useRef, useEffect } from "react";
 export default function Timer({
   mins = 0,
   secs = 0,
-  onLast10SecsRemaining = () => {},
-  onTimerChange = (currentTimer) => {},
+  onLast10SecsRemaining = () => { },
+  onTimerChange = (currentTimer) => { },
 }) {
   const Ref = useRef(null);
 
@@ -31,15 +31,15 @@ export default function Timer({
   };
 
   const startTimer = (e) => {
-    let { total, hours, minutes, seconds } = getTimeRemaining(e);
+    let { total, minutes, seconds } = getTimeRemaining(e);
     if (total >= 0) {
       // update the timer
       // check if less than 10 then we need to
       // add '0' at the beginning of the variable
       setTimer(
         (minutes > 9 ? minutes : "0" + minutes) +
-          ":" +
-          (seconds > 9 ? seconds : "0" + seconds)
+        ":" +
+        (seconds > 9 ? seconds : "0" + seconds)
       );
     }
   };
@@ -84,9 +84,9 @@ export default function Timer({
   // the countdown is via action event from the
   // button first we create function to be called
   // by the button
-  const onClickReset = () => {
-    clearTimer(getDeadTime());
-  };
+  // const onClickReset = () => {
+  //   clearTimer(getDeadTime());
+  // };
 
   onTimerChange(timer);
   return <div className="game-timer">Remaining Time: {timer}</div>;

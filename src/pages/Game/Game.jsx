@@ -1,7 +1,6 @@
 import BackButton from "../../components/BackButton";
 import Timer from "../../components/Timer";
 import "./Game.css";
-import CardMatchingGame from "../../components/CardMatchingGame";
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import gameContainerBackground from "../../images/game-container-background.svg";
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
@@ -9,7 +8,7 @@ import { useState } from "react";
 import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
 // import { useNavigate } from "react-router";
 
-export default function Game() {
+export default function Game(props) {
   const handle = useFullScreenHandle();
   // const navigate=useNavigate();
   const [last10SecsRemaining, setLast10SecsRemaining] = useState(false);
@@ -19,7 +18,7 @@ export default function Game() {
     <div className="game">
       <BackButton />
       <div className="game-header">
-        <h2 className="game-title">Card matching</h2>
+        <h2 className="game-title">{props.title}</h2>
         <Timer
           secs={15}
           onLast10SecsRemaining={() => setLast10SecsRemaining(true)}
@@ -80,18 +79,14 @@ export default function Game() {
               }
             </div>
           </div>
-
-          <CardMatchingGame />
+          {props.gameElement}
         </div>
       </FullScreen>
 
       <div className="game-details">
         <h3>Details</h3>
         <p>
-          This game can help your pupils learn to draw shapes and lines easily.
-          You will get multiple objects for this activity. You can use our
-          AutsiPen to make it more connected to the real world. You can get it
-          from our Explore page.
+          {props.details}
         </p>
       </div>
     </div>

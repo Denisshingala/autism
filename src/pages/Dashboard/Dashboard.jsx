@@ -186,27 +186,27 @@ const Dashboard = () => {
       >
         <SwiperSlide>
             <div className='most-played-game-card'>
-                <img src={Game1}/>
+                <img src={Game1} alt="game-img"/>
             </div>
         </SwiperSlide>
         <SwiperSlide>
             <div className='most-played-game-card'>
-                <img src={Game2}/>
+                <img src={Game2} alt="game-img"/>
             </div>
         </SwiperSlide>
         <SwiperSlide>
             <div className='most-played-game-card'>
-                <img src={Game1}/>
+                <img src={Game1} alt="game-img"/>
             </div>
         </SwiperSlide>
         <SwiperSlide>
             <div className='most-played-game-card'>
-                <img src={Game2}/>
+                <img src={Game2} alt="game-img"/>
             </div>
         </SwiperSlide>
         <SwiperSlide>
             <div className='most-played-game-card'>
-                <img src={Game1}/>
+                <img src={Game1} alt="game-img"/>
             </div>
         </SwiperSlide>
       </Swiper>
