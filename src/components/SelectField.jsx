@@ -7,10 +7,11 @@ import Select from "@mui/material/Select";
 
 export default function BasicSelect(props) {
   let { size } = props;
-  const [value, setValue] = React.useState("");
+  const [value, setValue] = React.useState(props.value);
 
   const handleChange = (event) => {
     setValue(event.target.value);
+    props.onChange(event.target.value);
   };
 
   return (
@@ -18,8 +19,11 @@ export default function BasicSelect(props) {
       <FormControl fullWidth>
         <InputLabel>{props.label}</InputLabel>
         <Select id={props.field} value={value} onChange={handleChange}>
-          {props.fieldValues.map((value, index) => (
-            <MenuItem value={{ value }} key={index}>{value}</MenuItem>
+          <MenuItem value="NaN">- Select -</MenuItem>
+          {props.fieldValues.map((val, index) => (
+            <MenuItem value={val} key={index}>
+              {val}
+            </MenuItem>
           ))}
         </Select>
       </FormControl>
