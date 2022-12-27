@@ -7,7 +7,7 @@ import PasswordField from "../../components/PasswordField";
 import SelectField from "../../components/SelectField";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -24,6 +24,7 @@ const Signup = () => {
       .then((res) => {
         let temp = [];
         temp.push(res.map((data) => data.name.common));
+        temp[0].sort();
         return temp;
       })
       .then((data) => {
@@ -34,16 +35,21 @@ const Signup = () => {
 
   const handleGender = (event) => {
     setCountry(event.target.value);
-  }
+  };
 
   const handleCountry = (event) => {
     setGender(event.target.value);
-  }
+  };
 
   return (
     <div id="container">
       <div id="login-signup-container">
-        <Button className="m-4" onClick={() => { navigate("/") }}>
+        <Button
+          className="m-4"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           <ArrowBackIosOutlinedIcon />
           <span className="backText">Exit</span>
         </Button>
@@ -138,6 +144,6 @@ const Signup = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Signup;
