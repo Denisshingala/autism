@@ -10,6 +10,7 @@ import Button from "@mui/material/Button";
 import { Link, useNavigate } from "react-router-dom";
 import AlertPopUp from "../../components/AlertPopUp";
 import axios from "axios";
+import validator from "validator";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -24,8 +25,6 @@ const Signup = () => {
     gender: "NaN",
     password: "",
   });
-  const [selectedCountry, setCountry] = useState({});
-  const [selectedGender, setGender] = useState({});
 
   const [alert, setAlert] = useState({});
 
@@ -44,12 +43,43 @@ const Signup = () => {
       .catch((err) => console.error(err));
   }, []);
 
-  const handleGender = (event) => {
-    setCountry(event.target.value);
-  };
-
   const submit = () => {
-    console.log(data);
+    if (
+      !data.name ||
+      !data.email ||
+      !data.DOB ||
+      data.country === "NaN" ||
+      data.gender === "NaN" ||
+      !data.password
+    ) {
+      setAlert({ error: "All fields are required!" });
+      return;
+    }
+
+    if (!validator.isEmail(data.email)) {
+      setAlert({ error: "Email must be a valid email!" });
+      return;
+    }
+
+    if (!validator.isDate(data.DOB)) {
+      setAlert({ error: "DOB must be a valid date!" });
+      return;
+    }
+
+    axios
+      .post("http://localhost:8000/send-email", data)
+      .then((res) => res.data)
+      .then((res) => {
+        if (res.success) {
+          setAlert({ success: res.message });
+        } else {
+          setAlert({ error: res.error });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        setAlert({ error: "Something went wrong with server!!" });
+      });
   };
 
   return (

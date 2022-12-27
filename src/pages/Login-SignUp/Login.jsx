@@ -6,14 +6,38 @@ import Logo from "../../images/logo.png";
 import PasswordField from "../../components/PasswordField";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AlertPopUp from "../../components/AlertPopUp";
+import axios from "axios";
 
 function Login() {
+  const navigate = useNavigate();
   const [alert, setAlert] = useState({});
-
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
   let currentYear = new Date().getFullYear();
-  // const navigate = useNavigate();
+
+  const submit = () => {
+    axios
+      .post("http://localhost:8000/login", data)
+      .then((res) => res.data)
+      .then((res) => {
+        if (res.success) {
+          setAlert({ success: res.message });
+          localStorage.setItem("token", res.token);
+          navigate("/");
+        } else {
+          setAlert({ error: res.error });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        setAlert({ error: err.response.data.error });
+      });
+  };
+
   return (
     <>
       <AlertPopUp alert={alert} setAlert={setAlert} />
@@ -33,16 +57,25 @@ function Login() {
                 </p>
                 <TextField
                   id="email"
-                  label="example: shubham@gmail.com"
+                  label="Email"
                   type="text"
+                  value={data.email}
                   style={{ width: "100%" }}
+                  onChange={(e) => setData({ ...data, email: e.target.value })}
                 />
               </div>
               <div>
                 <p style={{ margin: "30px 0 10px 0", color: "#888888" }}>
                   Password
                 </p>
-                <PasswordField />
+                <PasswordField
+                  onChange={(password) => {
+                    setData((prevData) => ({
+                      ...prevData,
+                      password: password,
+                    }));
+                  }}
+                />
               </div>
               <Link
                 to="/"
@@ -55,7 +88,11 @@ function Login() {
               >
                 Forgot password
               </Link>
-              <Button variant="contained" className="login-signup-button">
+              <Button
+                variant="contained"
+                className="login-signup-button"
+                onClick={submit}
+              >
                 Login
               </Button>
               <p>
