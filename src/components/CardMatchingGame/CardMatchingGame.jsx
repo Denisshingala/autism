@@ -9,9 +9,7 @@ function CardMatchingGame() {
   const [score, setScore] = useState(0);
   console.log(score);
 
-  const [positions, setPositions] = useState(
-    shuffle(new Array(12).fill(0).map((_, i) => i))
-  );
+  const [positions] = useState(shuffle(new Array(12).fill(0).map((_, i) => i)));
   console.log(positions);
 
   const [cardMatchedList, updateCardMatchedList] = useState([]);
@@ -97,10 +95,20 @@ function CardMatchingGame() {
         {cardMatchedList.map((cell) => (
           <div key={cell.id} style={{ display: "flex", width: "20%" }}>
             <div>
-              <img className="CardMatchingGame-img" src={`${cell.img.l}.png`} draggable={false} alt="" />
+              <img
+                className="CardMatchingGame-img"
+                src={`${cell.img.l}.png`}
+                draggable={false}
+                alt=""
+              />
             </div>
             <div>
-              <img className="CardMatchingGame-img" src={`${cell.img.r}.png`} draggable={false} alt="" />
+              <img
+                className="CardMatchingGame-img"
+                src={`${cell.img.r}.png`}
+                draggable={false}
+                alt=""
+              />
             </div>
           </div>
         ))}

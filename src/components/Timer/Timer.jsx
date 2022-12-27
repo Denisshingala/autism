@@ -84,9 +84,9 @@ export default function Timer({
   // the countdown is via action event from the
   // button first we create function to be called
   // by the button
-  const onClickReset = () => {
-    clearTimer(getDeadTime());
-  };
+  // const onClickReset = () => {
+  //   clearTimer(getDeadTime());
+  // };
 
   onTimerChange(timer);
   return <div className="game-timer">Remaining Time: {timer}</div>;
