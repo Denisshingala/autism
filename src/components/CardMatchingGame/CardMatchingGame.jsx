@@ -5,8 +5,9 @@ import { DropTarget } from "react-drag-drop-container";
 import { DragDropContainer } from "react-drag-drop-container";
 import { useEffect, useRef, useState } from "react";
 
-function CardMatchingGame() {
+function CardMatchingGame(props) {
   const [score, setScore] = useState(0);
+  const [flag,setFlag]=useState(true);
   console.log(score);
 
   const [positions, setPositions] = useState(
@@ -42,6 +43,18 @@ function CardMatchingGame() {
   });
 
   console.log(gameCells);
+  console.log(props.timer)
+  if(flag && (props.timer=="00" || cardMatchedList.length==4)){
+    if(cardMatchedList.length==4){
+      console.log("complete call");
+      props.CompleteCall(props.timer);
+      setFlag(false);
+    }else{
+      console.log("incomplete call");
+      props.InCompleteCall();
+    }
+    
+  }
   const gameObjs = gameCells.map((cell, idx) =>
     cell === 0 ? (
       <div className="game-object" key={idx}>
@@ -92,7 +105,7 @@ function CardMatchingGame() {
 
   return (
     <>
-      <div className="game-container grid-container">{gameObjs}</div>
+      <div className="grid-container">{gameObjs}</div>
       <div className="game-result-container">
         {cardMatchedList.map((cell) => (
           <div key={cell.id} style={{ display: "flex", width: "20%" }}>

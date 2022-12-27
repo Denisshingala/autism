@@ -14,6 +14,8 @@ export const Logo = require('./logo.png');
 export const Rectangle1 = require('./Rectangle 1.png');
 export const Rectangle2 = require('./Rectangle 2.jpg');
 export const Rectangle3 = require('./Rectangle 3.jpg');
+export const Completed=require("./Completed.png");
+export const Tryagain=require("./Tryagain.png");
 
 // Profile
 export const Shruti = require('./Profile/Shruti.jpg');
@@ -25,3 +27,9 @@ export const Denis = require('./Profile/Denis.jpg');
 
 // Pricing
 export const IntroToPen = require('./intro_to_pen.png');
+
+//game thumbnails
+export const CardMatchingThumb=require('./GameThumbnails/cardMatchingThumb.png');
+
+//game lesrn video
+export const CardMatchingVid=require('./GameLearnVid/demo.mp4'); 
