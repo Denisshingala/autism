@@ -1,5 +1,6 @@
 .MuiBackdrop-root{
     position: absolute !important;
+    
 }
 .MuiBox-root{
     position: absolute !important;
@@ -12,6 +13,10 @@
         background: #7BAAEA !important;
         color: #fff !important;
         font-weight: bold !important;
+}
+.learn-play-img{
+    width: 100%;
+    height: 110px;
 }
 @media only screen and (max-width: 550px) {
     .MuiBox-root {

@@ -16,6 +16,7 @@ export const Rectangle2 = require('./Rectangle 2.jpg');
 export const Rectangle3 = require('./Rectangle 3.jpg');
 export const Completed=require("./Completed.png");
 export const Tryagain=require("./Tryagain.png");
+export const LearnPlayImg=require("./learnplaymodalImg.png")
 
 // Profile
 export const Shruti = require('./Profile/Shruti.jpg');

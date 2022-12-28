@@ -4,6 +4,7 @@ import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
 import VideoModel from "../../components/VideoModel/VideoModel";
 import './LearnPlayModel.css'
+import { LearnPlayImg } from '../../images/images';
 const style = {
     position: 'absolute',
     top: '50%',
@@ -13,9 +14,12 @@ const style = {
     bgcolor: 'background.paper',
     border: 'none',
     boxShadow: 24,
-    pt: 2,
+    pt: 4,
     px: 4,
-    pb: 3,
+    pb: 4,
+    overflow:'',
+    height:'220px'
+    
   };
 
 
@@ -36,22 +40,26 @@ const [open, setOpen] = useState(true);
         container={() => document.getElementById('game-div')}
         open={open}
         onClose={handleClose}
+        disableEnforceFocus={false}
         aria-labelledby="parent-modal-title"
         aria-describedby="parent-modal-description"
         style={{display:'flex',alignItems:'center',justifyContent:'center'}}
       >
-        <Box sx={{ ...style, width: "700" }}>
-          
-          <p id="parent-modal-description">
-          <h3>Card Matching</h3>
+        <Box sx={{ ...style, width: "500px" }}>
+          <div className=''>
+          <div className='text-center'>
+          <h3 id="w-100 parent-modal-description">
             Please choose any one
-          </p>
-          <div className='d-flex justify-content-between'>
+          </h3>
+          </div>
+          <div className='mt-4 d-flex justify-content-around align-items-center'>
           <VideoModel />
           <Button className='learn-play-btn' onClick={()=>{
                 handleClose();
                 props.onPlayClick();
           }}> Play </Button>
+          </div>
+          <img src={LearnPlayImg} className="learn-play-img"/>
           </div>
         </Box>
 
