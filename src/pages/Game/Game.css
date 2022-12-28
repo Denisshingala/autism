@@ -20,3 +20,10 @@
   width: 90%;
   margin: 20px auto;
 }
+.levelscreen{
+  width:100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

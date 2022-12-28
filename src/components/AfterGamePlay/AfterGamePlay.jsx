@@ -17,7 +17,8 @@ const style = {
     pt: 2,
     px: 4,
     pb: 3,
-    TransitionDelay:'2s'
+    TransitionDelay:'2s',
+    display:'flex'
   };
 
 
@@ -34,7 +35,13 @@ const AfterGamePlay = (props) => {
     const handleClose = () => {
       setOpen(false);
     };
-
+    const handleNextLevel=()=>{
+      console.log("function called game level updated",props.gameLevel)
+      props.setStartFlag(false);
+      props.setGameLevel(props.gameLevel+1)
+      props.setLevelScreen(true);
+      
+    }
     return (
       <>
       {props.Completed?<><Button onClick={handleOpen}></Button>
@@ -55,7 +62,7 @@ const AfterGamePlay = (props) => {
                 </div>
                 <div className='col-md-6 col-sm-12 text-center'>
                     <h3>Well Done!!</h3>
-                    <Button className='next-game-btn' onClick={()=>{navigate()}}>Next Level</Button>
+                    <Button className='next-game-btn' onClick={()=>{handleNextLevel()}}>Next Level</Button>
                 </div>
             </div>
           </Box>

@@ -26,6 +26,7 @@ function CardMatchingGame(props) {
 
   const gameCells = new Array(12).fill(0);
   handsList.forEach((hands, idx) => {
+    if((idx+1)>(Number(props.gameLevel)*2)) return;
     const rightHandPosition = positions[2 * idx];
     const leftHandPosition = positions[2 * idx + 1];
 
@@ -44,8 +45,8 @@ function CardMatchingGame(props) {
 
   console.log(gameCells);
   console.log("props.timer",props.timer)
-  if(flag && (props.timer=="00" || cardMatchedList.length==4)){
-    if(cardMatchedList.length==4){
+  if(flag && (props.timer==="00" || cardMatchedList.length===(2*Number(props.gameLevel)))){
+    if(cardMatchedList.length===(2*Number(props.gameLevel))){
       console.log("complete call");
       props.CompleteCall(props.timer);
       setFlag(false);

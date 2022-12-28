@@ -6,23 +6,32 @@ import gameContainerBackground from "../../images/game-container-background.svg"
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import React, { useState } from "react";
 import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
+import ArrangeTheShapesGame from "../../components/ArrangeTheShapesGame/ArrangeTheShapesGame";
 import { useNavigate } from "react-router";
 import { CardMatchingThumb, Game1, Game2 } from "../../images/images";
 import LearnPlayModel from "../../components/LearnPlayModel/LearnPlayModel";
 import AfterGamePlay from "../../components/AfterGamePlay/AfterGamePlay";
 import CardMatchingGame from "../../components/CardMatchingGame";
-
+import Levels from "../../components/Levels/Levels";
 
 
 export default function Game(props) {
   const handle = useFullScreenHandle();
   const navigate=useNavigate();
-  
+  const [levelScreen,setLevelScreen]=useState(false)
+  const [repeatTimer,setRepeatTimer]=useState(false);
   const [last10SecsRemaining, setLast10SecsRemaining] = useState(false);
   const [startFlag,setStartFlag]=useState(false)
   const [learnPlayModel,setLearnPlayModel]=useState(true);
   const [gameStarted,setGameStarted]=useState(false);
-
+  const onNewLevelClick=()=>{
+    console.log("new level btn clicked")
+    setLevelScreen(false)
+    props.setGameCompleted(false);
+    props.setGameInCompleted(false);
+    setStartFlag(true)
+    repeatTimer(true)
+  }
   const onPlayClick=()=>{
     setLearnPlayModel(false);
     setGameStarted(true);
@@ -35,7 +44,8 @@ export default function Game(props) {
       <div className="game-header">
         <h2 className="game-title">{props.title}</h2>
         <Timer
-          secs={15}
+          repeatTimer={repeatTimer}
+          secs={180}
           onLast10SecsRemaining={() => setLast10SecsRemaining(true)}
           onTimerChange={(timer) => props.setTimer(timer)}
           startFlag={startFlag}
@@ -46,11 +56,11 @@ export default function Game(props) {
         <div
           className="game-container"
           style={{
-            backgroundImage: startFlag && !(gameStarted&&(props.gameCompleted||props.gameInCompleted))?`url(${gameContainerBackground})`:`url(${CardMatchingThumb})`,
-            backgroundSize:startFlag && !(gameStarted&&(props.gameCompleted||props.gameInCompleted))?handle.active?"100% auto" : "100% auto":handle.active?"100% 100vh" : "100% 65vh",
+            backgroundImage: startFlag && !(gameStarted&&(props.gameCompleted||props.gameInCompleted))?`url(${gameContainerBackground})`:`url(${gameContainerBackground})`,
+            backgroundSize:startFlag && !(gameStarted&&(props.gameCompleted||props.gameInCompleted))?handle.active?"100% auto" : "100% auto":handle.active?"100%" : "100% 65vh",
             height:startFlag && !(gameStarted&&(props.gameCompleted||props.gameInCompleted))?handle.active?"100vh" : "":handle.active?"100vh" : "65vh",
             width:"100%",
-            position: "relative",
+            position: handle.active?"fixed":'relative',
           }}
         >
           <div
@@ -96,14 +106,15 @@ export default function Game(props) {
               }
             </div>
           </div>
-              
           {
-            learnPlayModel?<LearnPlayModel onPlayClick={onPlayClick}/>:gameStarted && (props.gameCompleted || props.gameInCompleted)?<AfterGamePlay Completed={props.gameCompleted}/>:props.gameElement
+            levelScreen?<div className="levelscreen"><Levels gameLevel={props.gameLevel} onPlayClick={onNewLevelClick} setGameLevel={props.setGameLevel}/></div>:learnPlayModel?<LearnPlayModel onPlayClick={onPlayClick}/>:gameStarted && (props.gameCompleted || props.gameInCompleted)?<AfterGamePlay gameLevel={props.gameLevel} setGameLevel={props.setGameLevel}  levelScreen={levelScreen} setLevelScreen={setLevelScreen} Completed={props.gameCompleted} setStartFlag={setStartFlag}/>:props.gameElement
+          }    
+          {
+            console.log("updated game lvl",props.gameLevel)
           }
           
         </div>
       </FullScreen>
-
       <div className="game-details">
         <h3>Details</h3>
         <p>

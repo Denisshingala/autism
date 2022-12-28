@@ -6,12 +6,13 @@ export default function Timer({
   secs = 0,
   onLast10SecsRemaining = () => {},
   onTimerChange = (currentTimer) => {},
-  startFlag
+  startFlag,
+  repeatTimer
 }) {
   const Ref = useRef(null);
 
   // The state for our timer
-  const [timer, setTimer] = useState("00:15");
+  const [timer, setTimer] = useState("03:00");
 
   const getTimeRemaining = (e) => {
     const total = Date.parse(e) - Date.parse(new Date());
@@ -82,10 +83,22 @@ export default function Timer({
     if(startFlag){
       clearTimer(getDeadTime());
     }else{
-      clearInterval(Ref.current);
-      setTimer("00:15");
+      if(repeatTimer){
+        console.log("repeat timer",repeatTimer)
+        clearTimer(getDeadTime());
+      }else{
+        clearInterval(Ref.current);
+        setTimer("03:00");
+      } 
     }
-  }, [startFlag]);
+  }, [startFlag,repeatTimer]);
+  // useEffect(() => {
+  //   if(repeatTimer){
+  //     clearInterval(Ref.current);
+  //     setTimer("00:15");
+  //     console.log("repeat timer",repeatTimer)
+  //   }
+  // }, [repeatTimer]);
 
   // Another way to call the clearTimer() to start
   // the countdown is via action event from the
