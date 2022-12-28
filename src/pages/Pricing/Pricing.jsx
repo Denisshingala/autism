@@ -50,17 +50,16 @@ const Pricing = () => {
             </div>
           </div>
 
-          <div
-            className="my-5 d-flex flex-column align-items-center"
-            id="pricing-div"
-          >
-            <h2>Fair prices to fit your needs</h2>
-            <p style={{ color: "#808080", fontSize: "12px" }}>
-              Simple, transparent prices. choose your plan. cancel anytime
-            </p>
+          <div className="my-5" id="pricing-div">
+            <div className=" d-flex flex-column align-items-center">
+              <h2>Fair prices to fit your needs</h2>
+              <p style={{ color: "#808080", fontSize: "12px" }}>
+                Simple, transparent prices. choose your plan. cancel anytime
+              </p>
+            </div>
 
             <div className="d-flex justify-content-center flex-wrap w-100">
-              <div className="pricing-card my-3 mx-4 mx-4 py-2 px-3">
+              <div className="pricing-card my-3 mx-4 py-2 px-3">
                 <div
                   className="d-flex flex-column align-items-center justify-content-center py-2"
                   style={{ backgroundColor: "#ECF2FB", borderRadius: "5px" }}

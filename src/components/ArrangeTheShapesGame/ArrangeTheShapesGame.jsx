@@ -1,6 +1,8 @@
 import "./ArrangeTheShapesGame.css";
 import Draggable from "react-draggable";
 import { shuffle } from "./utils/helper";
+import { useEffect } from "react";
+import { useState } from "react";
 // import { useEffect, useState } from "react";
 
 const shapesData = [
@@ -24,35 +26,52 @@ const shapesData = [
   },
 ];
 
-const shuffledShapes = shuffle([...shapesData]);
+function ArrangeTheShapesGame(props) {
+  const [score, setScore] = useState(0);
+  const [flag, setFlag] = useState(true);
+  const [shuffledShapes] = useState(shuffle([...shapesData]));
+  const [totalMatchedShapes, setTotalMatchedShapes] = useState(0);
 
-const isShapeArranged = (id) => {
-  let sourcePos = document
-    .getElementById(`source-${id}`)
-    ?.getBoundingClientRect();
-  let targetPos = document
-    .getElementById(`target-${id}`)
-    ?.getBoundingClientRect();
+  const isShapeArranged = (id) => {
+    let sourcePos = document
+      .getElementById(`source-${id}`)
+      ?.getBoundingClientRect();
+    let targetPos = document
+      .getElementById(`target-${id}`)
+      ?.getBoundingClientRect();
 
-  if (!sourcePos || !targetPos) {
-    return false;
+    if (!sourcePos || !targetPos) {
+      return false;
+    }
+
+    if (
+      Math.abs(sourcePos.x - targetPos.x) < 20 &&
+      Math.abs(sourcePos.y - targetPos.y) < 20
+    ) {
+      document.getElementById(`source-${id}`).style.display = "none";
+      document.getElementById(`target-${id}`).style.backgroundColor = `${
+        shapesData[id - 1].color
+      }`;
+      setTotalMatchedShapes(totalMatchedShapes + 1);
+      setScore(score + 1);
+      return true;
+    } else {
+      return false;
+    }
+  };
+  
+  console.log(totalMatchedShapes);
+  if (flag && (props.timer === "00" || totalMatchedShapes === 3)) {
+    if (totalMatchedShapes === 3) {
+      console.log("complete call");
+      props.CompleteCall(props.timer);
+      setFlag(false);
+    } else {
+      console.log("incomplete call");
+      props.InCompleteCall();
+    }
   }
 
-  if (
-    Math.abs(sourcePos.x - targetPos.x) < 20 &&
-    Math.abs(sourcePos.y - targetPos.y) < 20
-  ) {
-    document.getElementById(`source-${id}`).style.display = "none";
-    document.getElementById(`target-${id}`).style.backgroundColor = `${
-      shapesData[id - 1].color
-    }`;
-    return true;
-  } else {
-    return false;
-  }
-};
-
-function ArrangeTheShapesGame() {
   return (
     <>
       <div

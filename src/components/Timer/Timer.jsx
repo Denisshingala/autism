@@ -6,11 +6,12 @@ export default function Timer({
   secs = 0,
   onLast10SecsRemaining = () => {},
   onTimerChange = (currentTimer) => {},
+  startFlag
 }) {
   const Ref = useRef(null);
 
   // The state for our timer
-  const [timer, setTimer] = useState("00:00");
+  const [timer, setTimer] = useState("00:15");
 
   const getTimeRemaining = (e) => {
     const total = Date.parse(e) - Date.parse(new Date());
@@ -31,15 +32,15 @@ export default function Timer({
   };
 
   const startTimer = (e) => {
-    let { total, hours, minutes, seconds } = getTimeRemaining(e);
+    let { total, minutes, seconds } = getTimeRemaining(e);
     if (total >= 0) {
       // update the timer
       // check if less than 10 then we need to
       // add '0' at the beginning of the variable
       setTimer(
         (minutes > 9 ? minutes : "0" + minutes) +
-          ":" +
-          (seconds > 9 ? seconds : "0" + seconds)
+        ":" +
+        (seconds > 9 ? seconds : "0" + seconds)
       );
     }
   };
@@ -55,6 +56,7 @@ export default function Timer({
     // If you try to remove this line the
     // updating of timer Variable will be
     // after 1000ms or 1sec
+    console.log("Ref current",Ref.current)
     if (Ref.current) clearInterval(Ref.current);
     const id = setInterval(() => {
       startTimer(e);
@@ -77,16 +79,21 @@ export default function Timer({
   // We put empty array to act as componentDid
   // mount only
   useEffect(() => {
-    clearTimer(getDeadTime());
-  }, []);
+    if(startFlag){
+      clearTimer(getDeadTime());
+    }else{
+      clearInterval(Ref.current);
+      setTimer("00:15");
+    }
+  }, [startFlag]);
 
   // Another way to call the clearTimer() to start
   // the countdown is via action event from the
   // button first we create function to be called
   // by the button
-  const onClickReset = () => {
-    clearTimer(getDeadTime());
-  };
+  // const onClickReset = () => {
+  //   clearTimer(getDeadTime());
+  // };
 
   onTimerChange(timer);
   return <div className="game-timer">Remaining Time: {timer}</div>;
