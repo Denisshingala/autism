@@ -39,21 +39,23 @@ const AfterGamePlay = (props) => {
       <>
       {props.Completed?<><Button onClick={handleOpen}></Button>
         <Modal
+          disableEscapeKeyDown={true}
           disablePortal={true}
+          hideBackdrop={true}
           container={() => document.getElementById('game-div')}
           open={open}
           onClose={handleClose}
           aria-labelledby="parent-modal-title"
           aria-describedby="parent-modal-description"
         >
-          <Box sx={{ ...style, width: "50%",height:"50%" }}>
+          <Box sx={{ ...style, width: "40%",height:"50%" }}>
             <div className='game-complted-div'>
-                <div className='col-md-6 col-sm-12'>
+                <div className='col-md-6 col-sm-12 text-center'>
                     <img src={Completed}/>
                 </div>
                 <div className='col-md-6 col-sm-12 text-center'>
                     <h3>Well Done!!</h3>
-                    <Button className='next-game-btn' onClick={()=>{navigate(-1)}}>Next Level</Button>
+                    <Button className='next-game-btn' onClick={()=>{navigate()}}>Next Level</Button>
                 </div>
             </div>
           </Box>
@@ -61,15 +63,17 @@ const AfterGamePlay = (props) => {
         </Modal></>:<><Button onClick={handleOpen}></Button>
         <Modal
           disablePortal={true}
+          disableEscapeKeyDown={true}
+          hideBackdrop={true}
           container={() => document.getElementById('game-div')}
           open={open}
           onClose={handleClose}
           aria-labelledby="parent-modal-title"
           aria-describedby="parent-modal-description"
         >
-          <Box sx={{ ...style, width: "50%",height:"50%" }}>
+          <Box sx={{ ...style, width: "40%",height:"50%" }}>
             <div className='game-complted-div'>
-                <div className='col-md-6 col-sm-12'>
+                <div className='col-md-6 col-sm-12 text-center'>
                     <img src={Tryagain}/>
                 </div>
                 <div className='col-md-6 col-sm-12 text-center'>

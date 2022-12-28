@@ -10,16 +10,16 @@ function CardMatchingGame(props) {
   const [flag,setFlag]=useState(true);
   console.log(score);
 
-  const [positions, setPositions] = useState(
+  const [positions,] = useState(
     shuffle(new Array(12).fill(0).map((_, i) => i))
   );
-  console.log(positions);
+  // console.log(positions);
 
   const [cardMatchedList, updateCardMatchedList] = useState([]);
-  console.log(cardMatchedList);
+  // console.log(cardMatchedList);
 
   const imageRefs = useRef([]);
-
+  console.log(props)
   useEffect(() => {
     imageRefs.current = imageRefs.current.slice(0, positions.length);
   }, [positions]);
@@ -43,7 +43,7 @@ function CardMatchingGame(props) {
   });
 
   console.log(gameCells);
-  console.log(props.timer)
+  console.log("props.timer",props.timer)
   if(flag && (props.timer=="00" || cardMatchedList.length==4)){
     if(cardMatchedList.length==4){
       console.log("complete call");
@@ -52,8 +52,7 @@ function CardMatchingGame(props) {
     }else{
       console.log("incomplete call");
       props.InCompleteCall();
-    }
-    
+    } 
   }
   const gameObjs = gameCells.map((cell, idx) =>
     cell === 0 ? (
@@ -65,7 +64,7 @@ function CardMatchingGame(props) {
         <DropTarget
           targetKey={idx.toString()}
           onHit={function (e) {
-            console.log(e);
+            // console.log(e);
             e.target.parentElement.style.display = "none";
             e.target.style.display = "none";
             e.dragElem.parentElement.style.display = "none";

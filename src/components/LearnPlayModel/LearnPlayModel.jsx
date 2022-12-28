@@ -40,14 +40,15 @@ const [open, setOpen] = useState(true);
         aria-describedby="parent-modal-description"
         style={{display:'flex',alignItems:'center',justifyContent:'center'}}
       >
-        <Box sx={{ ...style, width: "400" }}>
-          <h2 id="parent-modal-title">Text in a modal</h2>
+        <Box sx={{ ...style, width: "700" }}>
+          
           <p id="parent-modal-description">
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          <h3>Card Matching</h3>
+            Please choose any one
           </p>
           <div className='d-flex justify-content-between'>
           <VideoModel />
-          <Button onClick={()=>{
+          <Button className='learn-play-btn' onClick={()=>{
                 handleClose();
                 props.onPlayClick();
           }}> Play </Button>

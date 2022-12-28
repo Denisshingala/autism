@@ -28,7 +28,7 @@ const VideoModel = () => {
     };
   return (
     <>  
-        <Button onClick={handleOpen}>Learn</Button>
+        <Button className='learn-play-btn' onClick={handleOpen}>Learn</Button>
       <Modal
         disablePortal={true}
         container={() => document.getElementById('game-div')}
