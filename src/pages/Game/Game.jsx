@@ -7,6 +7,7 @@ import gameContainerBackground from "../../images/game-container-background.svg"
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import { useState } from "react";
 import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
+import ArrangeTheShapesGame from "../../components/ArrangeTheShapesGame/ArrangeTheShapesGame";
 // import { useNavigate } from "react-router";
 
 export default function Game() {
@@ -81,7 +82,8 @@ export default function Game() {
             </div>
           </div>
 
-          <CardMatchingGame />
+          {/* <CardMatchingGame /> */}
+          <ArrangeTheShapesGame />
         </div>
       </FullScreen>
 
