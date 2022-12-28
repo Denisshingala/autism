@@ -1,0 +1,22 @@
+.level-box {
+    background: linear-gradient(rgba(0, 255, 0, 0.15), rgba(0, 255, 0, 0.15)), url("../../images/level-card-bg.png");
+    background-size: cover;
+    width: 130px !important;
+    height: 140px !important;
+    border: 1px solid black;
+    display: inline-block;
+    margin-left: 65px;
+    line-height: 150px;
+    text-align: center;
+}
+
+.levels-outer-div::-webkit-scrollbar {
+    display: none;
+}
+
+.levels-outer-div {
+    border: 1px solid black;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}

@@ -44,8 +44,8 @@ function CardMatchingGame(props) {
 
   console.log(gameCells);
   console.log("props.timer",props.timer)
-  if(flag && (props.timer=="00" || cardMatchedList.length==4)){
-    if(cardMatchedList.length==4){
+  if(flag && (props.timer==="00" || cardMatchedList.length===4)){
+    if(cardMatchedList.length===4){
       console.log("complete call");
       props.CompleteCall(props.timer);
       setFlag(false);

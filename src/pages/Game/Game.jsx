@@ -6,6 +6,7 @@ import gameContainerBackground from "../../images/game-container-background.svg"
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import React, { useState } from "react";
 import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
+import ArrangeTheShapesGame from "../../components/ArrangeTheShapesGame/ArrangeTheShapesGame";
 import { useNavigate } from "react-router";
 import { CardMatchingThumb, Game1, Game2 } from "../../images/images";
 import LearnPlayModel from "../../components/LearnPlayModel/LearnPlayModel";

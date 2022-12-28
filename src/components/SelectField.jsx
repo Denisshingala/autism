@@ -19,7 +19,9 @@ export default function BasicSelect(props) {
         <InputLabel>{props.label}</InputLabel>
         <Select id={props.field} value={value} onChange={handleChange}>
           {props.fieldValues.map((value, index) => (
-            <MenuItem value={{ value }} key={index}>{value}</MenuItem>
+            <MenuItem value={{ value }} key={index}>
+              {value}
+            </MenuItem>
           ))}
         </Select>
       </FormControl>

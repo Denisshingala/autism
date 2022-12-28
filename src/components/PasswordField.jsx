@@ -7,7 +7,7 @@ import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
-const PasswordField = () => {
+const PasswordField = (props) => {
     const [values, setValues] = React.useState({
       password: "",
       showPassword: false,
@@ -15,6 +15,7 @@ const PasswordField = () => {
 
     const handleChange = (prop) => (event) => {
       setValues({ ...values, [prop]: event.target.value });
+      props.method({ ...props.data, password: event.target.value });
     };
 
     const handleClickShowPassword = () => {

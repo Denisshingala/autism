@@ -1,0 +1,15 @@
+.source-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+    padding: 5px;
+}
+
+.source-container>div {
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.CardMatchingGame-img {
+    width: 100%;
+    margin: auto;
+}
