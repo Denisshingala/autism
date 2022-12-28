@@ -5,20 +5,21 @@ import { DropTarget } from "react-drag-drop-container";
 import { DragDropContainer } from "react-drag-drop-container";
 import { useEffect, useRef, useState } from "react";
 
-function CardMatchingGame() {
+function CardMatchingGame(props) {
   const [score, setScore] = useState(0);
+  const [flag,setFlag]=useState(true);
   console.log(score);
 
-  const [positions, setPositions] = useState(
+  const [positions,] = useState(
     shuffle(new Array(12).fill(0).map((_, i) => i))
   );
-  console.log(positions);
+  // console.log(positions);
 
   const [cardMatchedList, updateCardMatchedList] = useState([]);
-  console.log(cardMatchedList);
+  // console.log(cardMatchedList);
 
   const imageRefs = useRef([]);
-
+  console.log(props)
   useEffect(() => {
     imageRefs.current = imageRefs.current.slice(0, positions.length);
   }, [positions]);
@@ -42,6 +43,17 @@ function CardMatchingGame() {
   });
 
   console.log(gameCells);
+  console.log("props.timer",props.timer)
+  if(flag && (props.timer=="00" || cardMatchedList.length==4)){
+    if(cardMatchedList.length==4){
+      console.log("complete call");
+      props.CompleteCall(props.timer);
+      setFlag(false);
+    }else{
+      console.log("incomplete call");
+      props.InCompleteCall();
+    } 
+  }
   const gameObjs = gameCells.map((cell, idx) =>
     cell === 0 ? (
       <div className="game-object" key={idx}>
@@ -52,7 +64,7 @@ function CardMatchingGame() {
         <DropTarget
           targetKey={idx.toString()}
           onHit={function (e) {
-            console.log(e);
+            // console.log(e);
             e.target.parentElement.style.display = "none";
             e.target.style.display = "none";
             e.dragElem.parentElement.style.display = "none";
@@ -92,7 +104,7 @@ function CardMatchingGame() {
 
   return (
     <>
-      <div className="game-container grid-container">{gameObjs}</div>
+      <div className="grid-container">{gameObjs}</div>
       <div className="game-result-container">
         {cardMatchedList.map((cell) => (
           <div key={cell.id} style={{ display: "flex", width: "20%" }}>

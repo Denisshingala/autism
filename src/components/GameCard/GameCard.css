@@ -1,7 +1,9 @@
 .game-card {
-    min-height: 19vw;
+    min-height: 24vw;
+    max-height: 26vw;
     width: 20vw !important;
     border-radius: 6px;
+    padding: 0.1vw;
 }
 
 .game-card .card-title {
@@ -12,6 +14,6 @@
     padding: 1px;
 }
 
-.game-card .card-img{
+.game-card .card-img {
     padding: 0 1vw;
 }
