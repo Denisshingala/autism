@@ -208,7 +208,7 @@ const Dashboard = () => {
           >
             <SwiperSlide>
               <div className="most-played-game-card">
-                <img src={Game1} />
+                <img src={Game1} alt="game-img" />
               </div>
             </SwiperSlide>
             <SwiperSlide>

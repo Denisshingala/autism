@@ -1,0 +1,29 @@
+.learn-play-model .MuiBackdrop-root {
+    position: absolute !important;
+}
+
+.learn-play-model .MuiBox-root {
+    position: absolute !important;
+}
+
+.learn-play-model .MuiModal-root {
+    position: absolute !important;
+}
+
+.learn-play-btn {
+    font-size: 1rem !important;
+    background: #7BAAEA !important;
+    color: #fff !important;
+    font-weight: bold !important;
+}
+
+.learn-play-img {
+    width: 100%;
+    height: 100px
+}
+
+@media only screen and (max-width: 550px) {
+    .learn-play-model .MuiBox-root {
+        width: 90% !important;
+    }
+}

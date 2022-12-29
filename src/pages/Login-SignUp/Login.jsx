@@ -18,7 +18,7 @@ function Login() {
     password: "",
   });
   let currentYear = new Date().getFullYear();
-
+  console.log(data);
   const submit = () => {
     axios
       .post("http://localhost:8000/login", data)

@@ -8,12 +8,16 @@ export const ExploreImage3 = require('./explore_image3.jpg');
 export const FinancialOfficer = require('./Financial_officer.jpg');
 export const Game1 = require('./game1.png');
 export const Game2 = require('./game2.png');
+export const Game3 = require('./game3.png');
 export const HeroGames = require('./herogames.png');
 export const LoginSignUpBrandImage = require('./login_signup_brand_image.png');
 export const Logo = require('./logo.png');
 export const Rectangle1 = require('./Rectangle 1.png');
 export const Rectangle2 = require('./Rectangle 2.jpg');
 export const Rectangle3 = require('./Rectangle 3.jpg');
+export const Completed=require("./Completed.png");
+export const Tryagain=require("./Tryagain.png");
+export const LearnPlayImg=require("./learnplaymodalImg.png")
 
 // Profile
 export const Shruti = require('./Profile/Shruti.jpg');
@@ -25,3 +29,11 @@ export const Denis = require('./Profile/Denis.jpg');
 
 // Pricing
 export const IntroToPen = require('./intro_to_pen.png');
+
+// coming soon
+export const ComingSoonImg = require('./coming-soon.png');
+//game thumbnails
+export const CardMatchingThumb = require('./GameThumbnails/cardMatchingThumb.png');
+
+//game lesrn video
+export const CardMatchingVid = require('./GameLearnVid/hand.mp4');

@@ -1,0 +1,18 @@
+.vidplay-close-btn{
+    position:fixed !important; 
+    z-index: 1; 
+}
+.video-model .MuiBackdrop-root{
+    position: absolute !important;
+}
+.video-model .MuiBox-root{
+    position: absolute !important;
+}
+.video-model .MuiModal-root{
+    position: absolute !important;
+}
+@media only screen and (max-width: 550px) {
+    .video-model .MuiBox-root {
+        width: 90% !important;
+    }
+}

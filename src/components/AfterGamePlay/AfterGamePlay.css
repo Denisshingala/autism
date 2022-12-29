@@ -1,0 +1,54 @@
+.after-game-play .MuiBackdrop-root{
+    position: absolute !important;
+}
+.after-game-play .MuiBox-root{
+    position: absolute !important;
+}
+.after-game-play .MuiModal-root{
+    position: absolute !important;
+    transition-delay: 2s;
+}
+.game-complted-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.next-game-btn{
+    font-size: 1rem !important;
+    background: #7BAAEA !important;
+    color: #fff !important;
+    font-weight: bold !important;
+}
+.game-complted-div h3{
+    color: #6BAB90 !important;
+}
+.game-complted-div img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+}
+
+@media only screen and (max-width: 550px) {
+    .learn-play-model .MuiBox-root {
+        width: 90% !important;
+    }
+    .game-complted-div{
+        flex-direction: column;
+    }
+    .game-complted-div img{
+        width: 50% !important;
+         height: 50% !important;
+        position: relative;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .game-complted-div{
+        flex-direction: column;
+    }
+    .game-complted-div img{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+}
