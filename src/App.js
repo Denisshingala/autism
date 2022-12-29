@@ -8,6 +8,7 @@ import Pricing from "./pages/Pricing/Pricing";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Games from "./pages/Games/Games";
 import { BrowserRouter } from "react-router-dom";
+import ConfirmSignUp from "./pages/Login-SignUp/ConfirmSignUp";
 import ComingSoon from "./pages/ComingSoon/ComingSoon";
 import GamesData from "./utils/GamesData";
 import GamesBody from "./components/GamesBody/GamesBody";
@@ -20,10 +21,11 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<Signup />} />
-        <Route exact path="/games" element={<Games />} >
+        <Route exact path="/confirm" element={<ConfirmSignUp />} />
+        <Route exact path="/games" element={<Games />}>
           <Route exact path="" element={<GamesBody />} />
         </Route>
-        <Route exact path="/games/:gameTitle" element={<GamesData />} ></Route>
+        <Route exact path="/games/:gameTitle" element={<GamesData />}></Route>
         <Route exact path="/pricing" element={<Pricing />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/comingsoon" element={<ComingSoon />} />

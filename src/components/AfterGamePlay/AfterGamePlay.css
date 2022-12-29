@@ -1,10 +1,10 @@
-.MuiBackdrop-root{
+.after-game-play .MuiBackdrop-root{
     position: absolute !important;
 }
-.MuiBox-root{
+.after-game-play .MuiBox-root{
     position: absolute !important;
 }
-.MuiModal-root{
+.after-game-play .MuiModal-root{
     position: absolute !important;
     transition-delay: 2s;
 }
@@ -30,7 +30,7 @@
 }
 
 @media only screen and (max-width: 550px) {
-    .MuiBox-root {
+    .learn-play-model .MuiBox-root {
         width: 90% !important;
     }
     .game-complted-div{

@@ -2,17 +2,17 @@
     position:fixed !important; 
     z-index: 1; 
 }
-.MuiBackdrop-root{
+.video-model .MuiBackdrop-root{
     position: absolute !important;
 }
-.MuiBox-root{
+.video-model .MuiBox-root{
     position: absolute !important;
 }
-.MuiModal-root{
+.video-model .MuiModal-root{
     position: absolute !important;
 }
 @media only screen and (max-width: 550px) {
-    .MuiBox-root {
+    .video-model .MuiBox-root {
         width: 90% !important;
     }
 }

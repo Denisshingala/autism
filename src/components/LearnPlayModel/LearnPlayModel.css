@@ -1,12 +1,12 @@
-.MuiBackdrop-root {
+.learn-play-model .MuiBackdrop-root {
     position: absolute !important;
 }
 
-.MuiBox-root {
+.learn-play-model .MuiBox-root {
     position: absolute !important;
 }
 
-.MuiModal-root {
+.learn-play-model .MuiModal-root {
     position: absolute !important;
 }
 
@@ -23,7 +23,7 @@
 }
 
 @media only screen and (max-width: 550px) {
-    .MuiBox-root {
+    .learn-play-model .MuiBox-root {
         width: 90% !important;
     }
 }

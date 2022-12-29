@@ -7,26 +7,24 @@ import { useEffect, useRef, useState } from "react";
 
 function CardMatchingGame(props) {
   const [score, setScore] = useState(0);
-  const [flag,setFlag]=useState(true);
+  const [flag, setFlag] = useState(true);
   console.log(score);
 
-  const [positions,] = useState(
-    shuffle(new Array(12).fill(0).map((_, i) => i))
-  );
+  const [positions] = useState(shuffle(new Array(12).fill(0).map((_, i) => i)));
   // console.log(positions);
 
   const [cardMatchedList, updateCardMatchedList] = useState([]);
   // console.log(cardMatchedList);
 
   const imageRefs = useRef([]);
-  console.log(props)
+  console.log(props);
   useEffect(() => {
     imageRefs.current = imageRefs.current.slice(0, positions.length);
   }, [positions]);
 
   const gameCells = new Array(12).fill(0);
   handsList.forEach((hands, idx) => {
-    if((idx+1)>(Number(props.gameLevel)*2)) return;
+    if (idx + 1 > Number(props.gameLevel) * 2) return;
     const rightHandPosition = positions[2 * idx];
     const leftHandPosition = positions[2 * idx + 1];
 
@@ -44,16 +42,20 @@ function CardMatchingGame(props) {
   });
 
   console.log(gameCells);
-  console.log("props.timer",props.timer)
-  if(flag && (props.timer==="00" || cardMatchedList.length===(2*Number(props.gameLevel)))){
-    if(cardMatchedList.length===(2*Number(props.gameLevel))){
+  console.log("props.timer", props.timer);
+  if (
+    flag &&
+    (props.timer === "00" ||
+      cardMatchedList.length === 2 * Number(props.gameLevel))
+  ) {
+    if (cardMatchedList.length === 2 * Number(props.gameLevel)) {
       console.log("complete call");
       props.CompleteCall(props.timer);
       setFlag(false);
-    }else{
+    } else {
       console.log("incomplete call");
       props.InCompleteCall();
-    } 
+    }
   }
   const gameObjs = gameCells.map((cell, idx) =>
     cell === 0 ? (
@@ -110,10 +112,20 @@ function CardMatchingGame(props) {
         {cardMatchedList.map((cell) => (
           <div key={cell.id} style={{ display: "flex", width: "20%" }}>
             <div>
-              <img className="CardMatchingGame-img" src={`${cell.img.l}.png`} draggable={false} alt="" />
+              <img
+                className="CardMatchingGame-img"
+                src={`${cell.img.l}.png`}
+                draggable={false}
+                alt=""
+              />
             </div>
             <div>
-              <img className="CardMatchingGame-img" src={`${cell.img.r}.png`} draggable={false} alt="" />
+              <img
+                className="CardMatchingGame-img"
+                src={`${cell.img.r}.png`}
+                draggable={false}
+                alt=""
+              />
             </div>
           </div>
         ))}
