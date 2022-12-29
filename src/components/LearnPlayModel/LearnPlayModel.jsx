@@ -34,38 +34,47 @@ const [open, setOpen] = useState(true);
     
   return (
     <>
-    <Button onClick={handleOpen}></Button>
+      <Button onClick={handleOpen}></Button>
       <Modal
-        disablePortal={true}        
-        container={() => document.getElementById('game-div')}
+        disablePortal={true}
+        container={() => document.getElementById("game-div")}
         open={open}
         onClose={handleClose}
         disableEnforceFocus={false}
         aria-labelledby="parent-modal-title"
         aria-describedby="parent-modal-description"
-        style={{display:'flex',alignItems:'center',justifyContent:'center'}}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
         <Box sx={{ ...style, width: "500px" }}>
-          <div className=''>
-          <div className='text-center'>
-          <h3 id="w-100 parent-modal-description">
-            Please choose any one
-          </h3>
-          </div>
-          <div className='mt-4 d-flex justify-content-around align-items-center'>
-          <VideoModel />
-          <Button className='learn-play-btn' onClick={()=>{
-                handleClose();
-                props.onPlayClick();
-          }}> Play </Button>
-          </div>
-          <img src={LearnPlayImg} className="learn-play-img"/>
-          </div>
+          {/* <div className=""> */}
+            <div className="text-center">
+              <h3 id="w-100 parent-modal-description">Please choose any one</h3>
+            </div>
+            <div className="mt-4 d-flex justify-content-around align-items-center">
+              <VideoModel />
+              <Button
+                className="learn-play-btn"
+                onClick={() => {
+                  handleClose();
+                  props.onPlayClick();
+                }}
+              >
+                {" "}
+                Play{" "}
+              </Button>
+            </div>
+            {/* <div className="d-flex justify-content-center learn-play-img-div"> */}
+              <img src={LearnPlayImg} className="learn-play-img" />
+            {/* </div> */}
+          {/* </div> */}
         </Box>
-
-      </Modal>   
+      </Modal>
     </>
-  )
+  );
 }
 
 export default LearnPlayModel
